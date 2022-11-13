@@ -2,250 +2,250 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <title>Chemical</title>
-  </head>
-  <body>
-    <div class="overlay none" id="overlay"></div>
+</head>
+<body>
+<div class="overlay none" id="overlay"></div>
 
-    <!-- Nav -->
-    <nav class="flex justify_center">
-      <div class="container justify_center">
+<!-- Nav -->
+<nav class="flex justify_center">
+    <div class="container justify_center">
         <div class="burMenu none" id="bur-menu">
-          <button class="close" onclick="closeNav()">
-            <img src="{% static 'img/close.png' %}" alt="" />
-          </button>
-          <ul class="ul">
-            <li><a href="{% url 'enviro:index' %}#about">About us</a></li>
-            <li><a href="{% url 'enviro:product' %}">Products</a></li>
-            <li><a href="{% url 'enviro:media' %}" target="_self">Media</a></li>
-            <li><a href="{% url 'enviro:contact' %}">Contact us</a></li>
-          </ul>
-        </div>
-        <div class="navbar">
-          <div class="navbarText">
-            <div class="logo">
-              <a href="{% url 'enviro:index' %}">
-                <img src="{% static 'img/logo.png' %}" alt="logo" />
-              </a>
-            </div>
-            <div class="burgerMenu">
-              <img
-                src="img/icons/burger_menu.png' %}"
-                alt="menu"
-                class="burger_menu"
-                onclick="openNav()"
-              />
-            </div>
-            <div class="menu">
-              <ul class="flex justify_center align_center">
+            <button class="close" onclick="closeNav()">
+                <img src="{% static 'img/close.png' %}" alt=""/>
+            </button>
+            <ul class="ul">
                 <li><a href="{% url 'enviro:index' %}#about">About us</a></li>
                 <li><a href="{% url 'enviro:product' %}">Products</a></li>
                 <li><a href="{% url 'enviro:media' %}" target="_self">Media</a></li>
                 <li><a href="{% url 'enviro:contact' %}">Contact us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="lang">
-            <img src="{% static 'img/icons/Globe.png' %}" alt="Globe" />
-            <div class="dropdown">
-              <div class="drop_btn flex align_center justify_center">
-                <button class="dropbtn_item" onclick="openDrop()">Ru</button>
-                <img
-                  src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
-                  alt="Down"
-                  onclick="openDrop()"
-                />
-              </div>
-              <div class="dropdown-content none" id="dropdown-content">
-                <a href="#">Uz</a>
-                <a href="#">Eng</a>
-              </div>
-            </div>
-          </div>
+            </ul>
         </div>
-      </div>
-    </nav>
+        <div class="navbar">
+            <div class="navbarText">
+                <div class="logo">
+                    <a href="{% url 'enviro:index' %}">
+                        <img src="{% static 'img/logo.png' %}" alt="logo"/>
+                    </a>
+                </div>
+                <div class="burgerMenu">
+                    <img
+                            src="img/icons/burger_menu.png' %}"
+                            alt="menu"
+                            class="burger_menu"
+                            onclick="openNav()"
+                    />
+                </div>
+                <div class="menu">
+                    <ul class="flex justify_center align_center">
+                        <li><a href="{% url 'enviro:index' %}#about">About us</a></li>
+                        <li><a href="{% url 'enviro:product' %}">Products</a></li>
+                        <li><a href="{% url 'enviro:media' %}" target="_self">Media</a></li>
+                        <li><a href="{% url 'enviro:contact' %}">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lang">
+                <img src="{% static 'img/icons/Globe.png' %}" alt="Globe"/>
+                <div class="dropdown">
+                    <div class="drop_btn flex align_center justify_center">
+                        <button class="dropbtn_item" onclick="openDrop()">Ru</button>
+                        <img
+                                src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
+                                alt="Down"
+                                onclick="openDrop()"
+                        />
+                    </div>
+                    <div class="dropdown-content none" id="dropdown-content">
+                        <a href="#">Uz</a>
+                        <a href="#">Eng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
-    <!-- Building Datas-->
-    <section
-      class="building_datas flex justify_center flex_column align_center"
-    >
-      <div class="container back_btn_left">
+<!-- Building Datas-->
+<section
+        class="building_datas flex justify_center flex_column align_center"
+>
+    <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-          <a href="{% url 'enviro:building' %}"
-            ><img src="{% static 'img/back.png' %}" alt="<" /> Back</a
-          >
+            <a href="{% url 'enviro:building' %}"
+            ><img src="{% static 'img/back.png' %}" alt="<"/> Back</a
+            >
         </button>
-      </div>
-      <div class="container align_center justify_center">
+    </div>
+    <div class="container align_center justify_center">
         <div class="materials_datas">
-          <div class="material_data1 flex align_center justify_between">
-            <div class="img_datas">
-              <img src="{% static 'img/building_dataimg.png' %}" alt="material" />
+            <div class="material_data1 flex align_center justify_between">
+                <div class="img_datas">
+                    <img src="{% static 'img/building_dataimg.png' %}" alt="material"/>
+                </div>
+                <div class="characters flex flex_column justify_between">
+                    <h1>Pure cellulose pulp, long fibre</h1>
+                    <p class="paragrapgh">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry
+                    </p>
+                    <div class="characs">
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Shape</p>
+                            <div class="hr_item"></div>
+                            <h3>Pellets</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Weight</p>
+                            <div class="hr_item"></div>
+                            <h3>100 kg</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Color</p>
+                            <div class="hr_item"></div>
+                            <h3>White</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Packing specifications</p>
+                            <div class="hr_item"></div>
+                            <h3>25kg/bag</h3>
+                        </div>
+                    </div>
+                    <button class="btn buildbtn" id="send">Order now</button>
+                </div>
             </div>
-            <div class="characters flex flex_column justify_between">
-              <h1>Pure cellulose pulp, long fibre</h1>
-              <p class="paragrapgh">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </p>
-              <div class="characs">
-                <div class="characs_conten flex justify_between align_center">
-                  <p>Shape</p>
-                  <div class="hr_item"></div>
-                  <h3>Pellets</h3>
+            <div class="material_data2_all">
+                <div class="material_tit flex align_center justify_between">
+                    <h1>Similar products</h1>
                 </div>
-                <div class="characs_conten flex justify_between align_center">
-                  <p>Weight</p>
-                  <div class="hr_item"></div>
-                  <h3>100 kg</h3>
-                </div>
-                <div class="characs_conten flex justify_between align_center">
-                  <p>Color</p>
-                  <div class="hr_item"></div>
-                  <h3>White</h3>
-                </div>
-                <div class="characs_conten flex justify_between align_center">
-                  <p>Packing specifications</p>
-                  <div class="hr_item"></div>
-                  <h3>25kg/bag</h3>
-                </div>
-              </div>
-              <button class="btn buildbtn" id="send">Order now</button>
-            </div>
-          </div>
-          <div class="material_data2_all">
-            <div class="material_tit flex align_center justify_between">
-              <h1>Similar products</h1>
-            </div>
-            <div class="material_data2 flex align_center justify_between">
-              <div class="slider_btn">
-                <button class="btn left_arr">
-                  <img src="{% static 'img/icons/allow_right.png' %}" alt="<" />
-                </button>
-                <button class="btn right_arr">
-                  <img src="{% static 'img/icons/allow_right.png' %}" alt=">" />
-                </button>
-              </div>
+                <div class="material_data2 flex align_center justify_between">
+                    <div class="slider_btn">
+                        <button class="btn left_arr">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt="<"/>
+                        </button>
+                        <button class="btn right_arr">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt=">"/>
+                        </button>
+                    </div>
 
-              <div class="slider_container">
-                <div class="buldingItems_slide">
-                  <div class="material">
-                    <div class="mimg">
-                      <img src="{% static 'img/sement.png' %}" alt="material" />
+                    <div class="slider_container">
+                        <div class="buldingItems_slide">
+                            <div class="material">
+                                <div class="mimg">
+                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
+                                </div>
+                                <h1>Pure cellulose pulp, long fibre</h1>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry
+                                </p>
+                                <a href="{% url 'enviro:building_data' %}"
+                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                                /></a>
+                            </div>
+                            <div class="material">
+                                <div class="mimg">
+                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
+                                </div>
+                                <h1>Pure cellulose pulp, long fibre</h1>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry
+                                </p>
+                                <a href="{% url 'enviro:building_data' %}" .
+                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                                /></a>
+                            </div>
+                            <div class="material">
+                                <div class="mimg">
+                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
+                                </div>
+                                <h1>Pure cellulose pulp, long fibre</h1>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry
+                                </p>
+                                <a href="{% url 'enviro:building_data' %}"
+                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                                /></a>
+                            </div>
+                        </div>
                     </div>
-                    <h1>Pure cellulose pulp, long fibre</h1>
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry
-                    </p>
-                    <a href="../Assets/buildingData.html"
-                      >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                    /></a>
-                  </div>
-                  <div class="material">
-                    <div class="mimg">
-                      <img src="{% static 'img/sement.png' %}" alt="material" />
-                    </div>
-                    <h1>Pure cellulose pulp, long fibre</h1>
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry
-                    </p>
-                    <a href="../Assets/buildingData.html" .
-                      >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                    /></a>
-                  </div>
-                  <div class="material">
-                    <div class="mimg">
-                      <img src="{% static 'img/sement.png' %}" alt="material" />
-                    </div>
-                    <h1>Pure cellulose pulp, long fibre</h1>
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry
-                    </p>
-                    <a href="../Assets/buildingData.html"
-                      >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                    /></a>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer-->
-    <footer>
-      <div class="footer flex justify_center align_center">
+<!-- Footer-->
+<footer>
+    <div class="footer flex justify_center align_center">
         <h1>All rights reserved enviro chemicals</h1>
         <div class="container justify_flexEnd align_center">
-          <div class="socials flex align_center">
-            <h2>Biz ijtimoiy tarmoqlarda</h2>
-            <ul class="flex">
-              <li>
-                <a href="#"
-                  ><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"
-                /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"
-                /></a>
-              </li>
-            </ul>
-          </div>
+            <div class="socials flex align_center">
+                <h2>Biz ijtimoiy tarmoqlarda</h2>
+                <ul class="flex">
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"
+                        /></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <div class="order_now none" id="order-now">
-      <div class="overlay"></div>
-      <div class="order_section">
+<div class="order_now none" id="order-now">
+    <div class="overlay"></div>
+    <div class="order_section">
         <h1>Order now</h1>
         <button class="close" id="close">
-          <img src="{% static 'img/close.png' %}" alt="x" />
+            <img src="{% static 'img/close.png' %}" alt="x"/>
         </button>
         <label>Ism</label>
-        <input type="text" placeholder="Ismingizni kiriting!" />
+        <input type="text" placeholder="Ismingizni kiriting!"/>
         <label>Telefon raqami </label>
-        <input type="text" value="+998" />
+        <input type="text" value="+998"/>
         <label>Mail</label>
-        <input type="text" placeholder="Email pochtangizni kiriting!" />
+        <input type="text" placeholder="Email pochtangizni kiriting!"/>
         <button class="btn send" id="send-next">Send</button>
-      </div>
     </div>
+</div>
 
-    <div class="successfully none" id="successfully">
-      <div class="overlay"></div>
-      <div class="order_section successfully_section">
+<div class="successfully none" id="successfully">
+    <div class="overlay"></div>
+    <div class="order_section successfully_section">
         <div class="successfull_img">
-          <img src="{% static 'img/headset.png' %}" alt="headset" />
+            <img src="{% static 'img/headset.png' %}" alt="headset"/>
         </div>
         <h1>Successfully send</h1>
         <p>Operators will contact you shortly!</p>
         <button class="btn send" id="close-successfully">Okay.</button>
-      </div>
     </div>
+</div>
 
-    <script src="{% static 'js/nav.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-  </body>
+<script src="{% static 'js/nav.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
 </html>
