@@ -77,15 +77,8 @@
             <div class="banner_items flex justify_between align_center">
                 <div class="bannerItems_anim" id="banner-animate">
                     <div class="products_change flex justify_evenly align_center">
-                        <h1 class="prodtitle">
-                            Lorem <span class="ublue">Ipsum </span> is simply dummy text
-                            of the
-                        </h1>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy
-                            text of the printing and typesetting industry. Lorem Ipsum
-                        </p>
+                        <h1 class="prodtitle">{{ mains.title }}</h1>
+                        <p>{{ mains.text }}</p>
 
                         <div class="products_btn flex align_center justify_between">
                             <button class="btn btn_products">
@@ -102,15 +95,8 @@
                         </div>
                     </div>
                     <div class="products_change flex justify_evenly align_center">
-                        <h1 class="prodtitle">
-                            Lorem <span class="ublue">Ipsum </span> is simply dummy text
-                            of the
-                        </h1>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy
-                            text of the printing and typesetting industry. Lorem Ipsum
-                        </p>
+                        <h1 class="prodtitle">{{ mains.title }}</h1>
+                        <p>{{ mains.text }}</p>
 
                         <div class="products_btn flex align_center justify_between">
                             <button class="btn btn_products">
@@ -140,73 +126,69 @@
         <div class="why_us_contents flex justify_center align_center">
             <div class="why_us_content1 flex justify_center align_center">
                 <div class="container justify_between">
-                    <div class="content long_content">
-                        <div class="con_img">
-                            <div class="con_img_bg flex justify_center align_center">
-                                <img src="{% static 'img/kukrak_nishoni.png' %}" alt="yorliq"/>
-                            </div>
-                        </div>
-                        <div class="con_titles flex justify_center">
-                            <h1>Lorem Ipsum is simply</h1>
-                            <p>
-                                Vision By inventing and importing best quality raw
-                                materials, to be one of the professional and experienced
-                                company which can help to improve the profit of its clients
-                                and responsibly the life of people all over the world.
-                            </p>
-                        </div>
-                    </div>
+{#                    <div class="content long_content">#}
+{#                        <div class="con_img">#}
+{#                            <div class="con_img_bg flex justify_center align_center">#}
+{#                                <img src="{% static 'img/kukrak_nishoni.png' %}" alt="yorliq"/>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="con_titles flex justify_center">#}
+{#                            <h1>Lorem Ipsum is simply</h1>#}
+{#                            <p>#}
+{#                                Vision By inventing and importing best quality raw#}
+{#                                materials, to be one of the professional and experienced#}
+{#                                company which can help to improve the profit of its clients#}
+{#                                and responsibly the life of people all over the world.#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+                    {% for why in why_content1 %}
                     <div class="content short_content">
                         <div class="con_img">
                             <div class="con_img_bg flex justify_center align_center">
-                                <img src="{% static 'img/zur.png' %}" alt="ok"/>
+                                <img src="media/{{ why.image }}" alt="ok"/>
                             </div>
                         </div>
                         <div class="con_titles">
-                            <h1>Lorem Ipsum is simply</h1>
-                            <p>
-                                Inventing, producing and importing the highest quality
-                                chemical raw materials with best price for its partners all
-                                over the world.
-                            </p>
+                            <h1>{{ why.title }}</h1>
+                            <p>{{ why.text }}</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="why_us_content2 flex justify_center align_center">
                 <div class="container justify_between">
+                    {% for why in why_content2 %}
                     <div class="content short_content">
                         <div class="con_img">
                             <div class="con_img_bg flex justify_center align_center">
-                                <img src="{% static 'img/dollor.png' %}" alt="dollor"/>
+                                <img src="media/{{ why.image }}" alt="dollor"/>
                             </div>
                         </div>
                         <div class="con_titles">
-                            <h1>Lorem Ipsum is simply</h1>
-                            <p>
-                                Inventing, producing and importing the highest quality
-                                chemical raw materials with best price for its partners all
-                                over the world.
-                            </p>
+                            <h1>{{ why.title }}</h1>
+                            <p>{{ why.text }}</p>
                         </div>
                     </div>
-                    <div class="content long_content">
-                        <div class="con_img">
-                            <div class="con_img_bg flex justify_center align_center">
-                                <img src="{% static 'img/lampa.png' %}" alt="lampa"/>
-                            </div>
-                        </div>
-                        <div class="con_titles">
-                            <h1>Lorem Ipsum is simply</h1>
-                            <p>
-                                Inventing, producing and importing the highest quality
-                                chemical raw materials with best price for its partners all
-                                over the world. Inventing, producing and importing the
-                                highest quality chemical raw materials with best price for
-                                its partners all over the world.
-                            </p>
-                        </div>
-                    </div>
+                    {% endfor %}
+{#                    <div class="content long_content">#}
+{#                        <div class="con_img">#}
+{#                            <div class="con_img_bg flex justify_center align_center">#}
+{#                                <img src="{% static 'img/lampa.png' %}" alt="lampa"/>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="con_titles">#}
+{#                            <h1>Lorem Ipsum is simply</h1>#}
+{#                            <p>#}
+{#                                Inventing, producing and importing the highest quality#}
+{#                                chemical raw materials with best price for its partners all#}
+{#                                over the world. Inventing, producing and importing the#}
+{#                                highest quality chemical raw materials with best price for#}
+{#                                its partners all over the world.#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
                 </div>
             </div>
         </div>
@@ -219,39 +201,38 @@
         <h1 class="pro_title">Products</h1>
         <div class="products_contents flex justify_center align_center">
             <div class="container justify_between align_center">
+                {% for category in categories %}
                 <div class="pro_con">
-                    <img src="{% static 'img/himicials.png' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
+                    <img src="media/{{ category.image }}" alt="Products"/>
+                    <h1>{{ category.title }}</h1>
+                    <p>{{ category.text }}</p>
                     <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
+                        <a href="{% url 'enviro:building' pk=category.id %}">View more</a>
                     </button>
                 </div>
-                <div class="pro_con">
-                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
-                    <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
-                    </button>
-                </div>
-                <div class="pro_con">
-                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
-                    <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
-                    </button>
-                </div>
+                {% endfor %}
+{#                <div class="pro_con">#}
+{#                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>#}
+{#                    <h1>Qurilish ximikatlari</h1>#}
+{#                    <p>#}
+{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+{#                        industry.#}
+{#                    </p>#}
+{#                    <button class="btn_light">#}
+{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+{#                    </button>#}
+{#                </div>#}
+{#                <div class="pro_con">#}
+{#                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>#}
+{#                    <h1>Qurilish ximikatlari</h1>#}
+{#                    <p>#}
+{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+{#                        industry.#}
+{#                    </p>#}
+{#                    <button class="btn_light">#}
+{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+{#                    </button>#}
+{#                </div>#}
             </div>
         </div>
     </div>
@@ -266,20 +247,8 @@
                     <img src="{% static 'img/about_man.png' %}" alt="about us"/>
                 </div>
                 <div class="about_content2">
-                    <h1>About us</h1>
-                    <p>
-                        We make the world better with chemistry! “Enviro chemicals” LLC
-                        has been working in the field of chemical raw materials industry
-                        when it was established. With its hard working team and perfect
-                        solutions on problems, the compnay has become one of the leading
-                        institution in the sector. The company are mainly specilized on
-                        raw materials for paints, construction chemicals, leather,
-                        plastics and textiles, which means there are rich product
-                        portfolio. With the purpose of customer satisfaction with its
-                        quality products and reasonable price policy, the team of
-                        “Enviro Chemicals” LLC stays on principle of “we make the world
-                        better with chemistry“.
-                    </p>
+                    <h1>{{ mains.about_title }}</h1>
+                    <p>{{ mains.about_text }}</p>
                 </div>
             </div>
         </div>
@@ -304,51 +273,49 @@
                         </button>
                     </div>
                     <div class="client_logos_img">
-                        <img
-                                src="{% static 'img/logoIPsum.png' %}"
-                                alt="logoIPsum"
-                                class="block"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum1.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum2.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum3.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum4.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum5.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum6.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum7.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
-                        <img
-                                src="{% static 'img/logoIPsum8.png' %}"
-                                alt="logoIPsum"
-                                class="mnone"
-                        />
+                        {% for logo in logos %}
+                        <img src="media/{{ logo.logo_image }}" alt="logoIPsum" class="block"/>
+                        {% endfor %}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum1.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum2.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum3.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum4.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum5.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum6.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum7.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
+{#                        <img#}
+{#                                src="{% static 'img/logoIPsum8.png' %}"#}
+{#                                alt="logoIPsum"#}
+{#                                class="mnone"#}
+{#                        />#}
                     </div>
                 </div>
             </div>
@@ -372,27 +339,27 @@
                             <img src="{% static 'img/icons/fi-rr-phone-call.png' %}" alt="phone"/>
                             <p>Phone number</p>
                         </div>
-                        <h1>+998 97 628 28 82</h1>
+                        <h1>{{ mains.phone_number }}</h1>
                     </div>
                     <div class="contents_data">
                         <div class="top_data">
                             <img src="{% static 'img/icons/mail.png' %}" alt="email"/>
                             <p>E-mail</p>
                         </div>
-                        <h1>The.faksa@gmail.com</h1>
+                        <h1>{{ mains.email }}</h1>
                     </div>
                     <div class="contents_data">
                         <div class="top_data">
                             <img src="{% static 'img/icons/address.png' %}" alt="Adress"/>
                             <p>Adress</p>
                         </div>
-                        <h1>Farg’ona shaxar, Boychechak 4</h1>
+                        <h1>{{ mains.address }}</h1>
                     </div>
                 </div>
             </div>
             <div class="form_cons">
                 <div class="form_section">
-                    <h1>Lorem ipsum</h1>
+                    <h1>{{ mains.contact_title }}</h1>
                     <form class="form">
                         <div class="name">
                             <label>Name</label>

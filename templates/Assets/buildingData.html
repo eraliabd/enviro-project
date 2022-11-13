@@ -77,7 +77,7 @@
 >
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href="{% url 'enviro:building' %}"
+            <a href=""
             ><img src="{% static 'img/back.png' %}" alt="<"/> Back</a
             >
         </button>
@@ -86,34 +86,31 @@
         <div class="materials_datas">
             <div class="material_data1 flex align_center justify_between">
                 <div class="img_datas">
-                    <img src="{% static 'img/building_dataimg.png' %}" alt="material"/>
+                    <img src="/media/{{ building_data.image }}" alt="material"/>
                 </div>
                 <div class="characters flex flex_column justify_between">
-                    <h1>Pure cellulose pulp, long fibre</h1>
-                    <p class="paragrapgh">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry
-                    </p>
+                    <h1>{{ building_data.title }}</h1>
+                    <p class="paragrapgh">{{ building_data.text }}</p>
                     <div class="characs">
                         <div class="characs_conten flex justify_between align_center">
                             <p>Shape</p>
                             <div class="hr_item"></div>
-                            <h3>Pellets</h3>
+                            <h3>{{ building_data.shape }}</h3>
                         </div>
                         <div class="characs_conten flex justify_between align_center">
                             <p>Weight</p>
                             <div class="hr_item"></div>
-                            <h3>100 kg</h3>
+                            <h3>{{ building_data.weight }}</h3>
                         </div>
                         <div class="characs_conten flex justify_between align_center">
                             <p>Color</p>
                             <div class="hr_item"></div>
-                            <h3>White</h3>
+                            <h3>{{ building_data.color }}</h3>
                         </div>
                         <div class="characs_conten flex justify_between align_center">
                             <p>Packing specifications</p>
                             <div class="hr_item"></div>
-                            <h3>25kg/bag</h3>
+                            <h3>{{ building_data.packing_specification }}</h3>
                         </div>
                     </div>
                     <button class="btn buildbtn" id="send">Order now</button>
@@ -135,45 +132,45 @@
 
                     <div class="slider_container">
                         <div class="buldingItems_slide">
-                            <div class="material">
-                                <div class="mimg">
-                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
-                                </div>
-                                <h1>Pure cellulose pulp, long fibre</h1>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry
-                                </p>
-                                <a href="{% url 'enviro:building_data' %}"
-                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                                /></a>
-                            </div>
-                            <div class="material">
-                                <div class="mimg">
-                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
-                                </div>
-                                <h1>Pure cellulose pulp, long fibre</h1>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry
-                                </p>
-                                <a href="{% url 'enviro:building_data' %}" .
-                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                                /></a>
-                            </div>
-                            <div class="material">
-                                <div class="mimg">
-                                    <img src="{% static 'img/sement.png' %}" alt="material"/>
-                                </div>
-                                <h1>Pure cellulose pulp, long fibre</h1>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry
-                                </p>
-                                <a href="{% url 'enviro:building_data' %}"
-                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                                /></a>
-                            </div>
+{#                            <div class="material">#}
+{#                                <div class="mimg">#}
+{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
+{#                                </div>#}
+{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
+{#                                <p>#}
+{#                                    Lorem Ipsum is simply dummy text of the printing and#}
+{#                                    typesetting industry#}
+{#                                </p>#}
+{#                                <a href="{% url 'enviro:building_data' %}"#}
+{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
+{#                                /></a>#}
+{#                            </div>#}
+{#                            <div class="material">#}
+{#                                <div class="mimg">#}
+{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
+{#                                </div>#}
+{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
+{#                                <p>#}
+{#                                    Lorem Ipsum is simply dummy text of the printing and#}
+{#                                    typesetting industry#}
+{#                                </p>#}
+{#                                <a href="{% url 'enviro:building_data' %}" .#}
+{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
+{#                                /></a>#}
+{#                            </div>#}
+{#                            <div class="material">#}
+{#                                <div class="mimg">#}
+{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
+{#                                </div>#}
+{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
+{#                                <p>#}
+{#                                    Lorem Ipsum is simply dummy text of the printing and#}
+{#                                    typesetting industry#}
+{#                                </p>#}
+{#                                <a href="{% url 'enviro:building_data' %}"#}
+{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
+{#                                /></a>#}
+{#                            </div>#}
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,10 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Main(models.Model):
     # main
+    # title = RichTextField(max_length=255, null=True, blank=True)
     title = models.CharField(max_length=255, null=True, blank=True)
     text = models.TextField(null=True, blank=True)
 
@@ -49,8 +51,12 @@ class ProductCategory(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
 
+    def __str__(self):
+        return self.title
+
 
 class Product(models.Model):
+    product_category = models.ForeignKey(ProductCategory, null=True, on_delete=models.SET_NULL)
     image = models.ImageField(upload_to='product_img')
     title = models.CharField(max_length=255)
     text = models.TextField()
@@ -60,4 +66,5 @@ class Product(models.Model):
     color = models.CharField(max_length=50)
     packing_specification = models.CharField(max_length=50)
 
-
+    def __str__(self):
+        return f"{self.title} {self.product_category}"

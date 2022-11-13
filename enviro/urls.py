@@ -5,9 +5,9 @@ app_name = 'enviro'
 
 urlpatterns = [
     path('', index, name='index'),
-    path('product/', product, name='product'),
+    path('products/', product, name='product'),
     path('media/', media, name='media'),
-    path('building/', building, name='building'),
-    path('building_data/', building_data, name='building_data'),
+    path('building/<int:pk>/', building, name='building'),
+    path('building_data/<int:pk>/', building_data, name='building_data'),
     path('contact/', contact, name='contact'),
 ]

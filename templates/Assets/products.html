@@ -79,39 +79,38 @@
         </div>
         <div class="products_contents flex justify_center">
             <div class="container justify_between align_center">
+                {% for product in products %}
                 <div class="pro_con">
-                    <img src="{% static 'img/himicials.png' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
+                    <img src="/media/{{ product.image }}" alt="Products"/>
+                    <h1>{{ product.title }}</h1>
+                    <p>{{ product.text }}</p>
                     <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
+                        <a href="{% url 'enviro:building' pk=product.id %}">View more</a>
                     </button>
                 </div>
-                <div class="pro_con">
-                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
-                    <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
-                    </button>
-                </div>
-                <div class="pro_con">
-                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>
-                    <h1>Qurilish ximikatlari</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.
-                    </p>
-                    <button class="btn_light">
-                        <a href="{% url 'enviro:building' %}">View more</a>
-                    </button>
-                </div>
+                {% endfor %}
+{#                <div class="pro_con">#}
+{#                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>#}
+{#                    <h1>Qurilish ximikatlari</h1>#}
+{#                    <p>#}
+{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+{#                        industry.#}
+{#                    </p>#}
+{#                    <button class="btn_light">#}
+{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+{#                    </button>#}
+{#                </div>#}
+{#                <div class="pro_con">#}
+{#                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>#}
+{#                    <h1>Qurilish ximikatlari</h1>#}
+{#                    <p>#}
+{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+{#                        industry.#}
+{#                    </p>#}
+{#                    <button class="btn_light">#}
+{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+{#                    </button>#}
+{#                </div>#}
             </div>
         </div>
     </div>
