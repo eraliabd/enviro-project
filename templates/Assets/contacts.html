@@ -134,13 +134,14 @@
                 </div>
             </div>
             <div class="form_cons">
-                <form class="form flex justify_between flex_column" enctype="multipart/form-data">
+                <form method="post" class="form flex justify_between flex_column" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="name">
                         <label>Name</label>
                         <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="Ismingizni kiriting!"
                                 required
                         />
@@ -150,6 +151,7 @@
                         <input
                                 type="number"
                                 id="number"
+                                name="phone_number"
                                 placeholder="Telefon raqamingizni kiriting"
                                 required
                         />
@@ -159,6 +161,7 @@
                         <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="Email pochtani kiriting"
                                 required
                         />
@@ -216,7 +219,7 @@
     <div class="order_section">
         <h1>Order now</h1>
         <button class="close" id="close">
-            <img src="../Images/close.png" alt="x"/>
+            <img src="{% static 'img/close.png' %}" alt="x"/>
         </button>
         <div class="name">
             <label>Name</label>
@@ -245,7 +248,7 @@
                     required
             />
         </div>
-        <button class="btn send" id="send-next">Send</button>
+        <button type="submit" class="btn send" id="send-next">Send</button>
     </div>
 </div>
 
@@ -253,7 +256,7 @@
     <div class="overlay"></div>
     <div class="order_section successfully_section">
         <div class="successfull_img">
-            <img src="../Images/headset.png" alt="headset"/>
+            <img src="{% static 'img/headset.png' %}" alt="headset"/>
         </div>
         <h1>Successfully send</h1>
         <p>Operators will contact you shortly!</p>

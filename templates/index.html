@@ -360,12 +360,14 @@
             <div class="form_cons">
                 <div class="form_section">
                     <h1>{{ mains.contact_title }}</h1>
-                    <form class="form">
+                    <form class="form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="name">
                             <label>Name</label>
                             <input
                                     type="text"
                                     id="name"
+                                    name="name"
                                     placeholder="Ismingizni kiriting!"
                                     required
                             />
@@ -375,6 +377,7 @@
                             <input
                                     type="number"
                                     id="number"
+                                    name="phone_number"
                                     placeholder="Telefon raqamingizni kiriting"
                                     required
                             />
@@ -384,11 +387,12 @@
                             <input
                                     type="email"
                                     id="email"
+                                    name="email"
                                     placeholder="Email pochtani kiriting"
                                     required
                             />
                         </div>
-                        <button class="btn send" id="send">Send</button>
+                        <button type="submit" class="btn send" id="send">Send</button>
                     </form>
                 </div>
             </div>

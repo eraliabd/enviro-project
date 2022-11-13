@@ -77,9 +77,7 @@
 >
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href=""
-            ><img src="{% static 'img/back.png' %}" alt="<"/> Back</a
-            >
+            <a href=""><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
         </button>
     </div>
     <div class="container align_center justify_center">
@@ -132,19 +130,18 @@
 
                     <div class="slider_container">
                         <div class="buldingItems_slide">
-{#                            <div class="material">#}
-{#                                <div class="mimg">#}
-{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-{#                                </div>#}
-{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
-{#                                <p>#}
-{#                                    Lorem Ipsum is simply dummy text of the printing and#}
-{#                                    typesetting industry#}
-{#                                </p>#}
-{#                                <a href="{% url 'enviro:building_data' %}"#}
-{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-{#                                /></a>#}
-{#                            </div>#}
+                            {% for build in buildings %}
+                            <div class="material">
+                                <div class="mimg">
+                                    <img src="/media/{{ build.image }}" alt="material"/>
+                                </div>
+                                <h1>{{ build.title }}</h1>
+                                <p>{{ build.text }}</p>
+                                <a href="{% url 'enviro:building_data' pk=build.id %}"
+                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                                /></a>
+                            </div>
+                            {% endfor %}
 {#                            <div class="material">#}
 {#                                <div class="mimg">#}
 {#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}

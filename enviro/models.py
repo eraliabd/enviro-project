@@ -22,7 +22,7 @@ class Main(models.Model):
 
 class Contact(models.Model):
     full_name = models.CharField(max_length=200)
-    phone_number = models.PositiveIntegerField()
+    phone_number = models.PositiveBigIntegerField()
     email = models.EmailField(max_length=70)
     created = models.DateTimeField(auto_now_add=True)
 

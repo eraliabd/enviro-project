@@ -26,9 +26,10 @@ urlpatterns = [
     re_path('i18n/', include('django.conf.urls.i18n')),
     path('', include('enviro.urls', namespace='environ')),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += i18n_patterns(
 #     path(_(''), include('enviro.urls')),
 # )
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

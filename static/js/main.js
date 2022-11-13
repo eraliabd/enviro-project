@@ -28,7 +28,7 @@ closeSuccessfully.addEventListener("click", (e) => {
 // regEx
 
 let regEX = /[a-zA-Z0-9]{2,}@/;
-let regExNumber = /^[0-9]{2,}$/;
+let regExNumber = /^+[0-9]{2,}$/;
 let regExName = /^[a-zA-Z]{2,24}$/;
 
 const email = document.querySelectorAll("#email");

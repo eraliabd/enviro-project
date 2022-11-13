@@ -12,6 +12,14 @@ def index(request):
     # print(why_content2)
     logos = Logo.objects.all()
 
+    if request.method == 'POST':
+        model = Contact()
+        model.full_name = request.POST.get('name', '')
+        model.phone_number = request.POST.get('phone_number', '')
+        model.email = request.POST.get('email', '')
+
+        model.save()
+
     context = {
         'mains': main,
         'why_content1': why_content1,
@@ -46,9 +54,14 @@ def media(request):
 
 def building(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
+    buildings1 = buildings[:len(buildings)//2]
+    buildings2 = buildings[len(buildings)//2:]
+    products = ProductCategory.objects.all()
 
     context = {
-        'buildings': buildings,
+        'buildings1': buildings1,
+        'buildings2': buildings2,
+        'products': products,
     }
     return render(request, 'Assets/building.html', context)
 
@@ -65,4 +78,12 @@ def building_data(request, pk):
 
 
 def contact(request):
+    if request.method == 'POST':
+        model = Contact()
+        model.full_name = request.POST.get('name', '')
+        model.phone_number = request.POST.get('phone_number', '')
+        model.email = request.POST.get('email', '')
+
+        model.save()
+
     return render(request, 'Assets/contacts.html')
