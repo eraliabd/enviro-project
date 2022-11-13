@@ -1,0 +1,521 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chemical</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<div class="overlay none" id="overlay"></div>
+
+<!-- Header -->
+<header>
+    <nav class="flex justify_center">
+        <div class="container justify_center">
+            <div class="burMenu none" id="bur-menu">
+                <button class="close" onclick="closeNav()">
+                    <img src="{% static 'img/close.png' %}" alt=""/>
+                </button>
+                <ul class="ul">
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="{% url 'enviro:product' %}">Products</a></li>
+                    <li><a href="{% url 'enviro:media' %}" target="_self">Media</a></li>
+                    <li><a href="{% url 'enviro:contact' %}">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="navbar">
+                <div class="navbarText">
+                    <div class="logo">
+                        <a href="{% url 'enviro:index' %}">
+                            <img src="{% static 'img/logo.png' %}" alt="logo"/>
+                        </a>
+                    </div>
+                    <div class="burgerMenu">
+                        <img
+                                src="{% static 'img/icons/burger_menu.png' %}"
+                                alt="menu"
+                                class="burger_menu"
+                                onclick="openNav()"
+                        />
+                    </div>
+                    <div class="menu">
+                        <ul class="flex justify_center align_center">
+                            <li><a href="#about">About us</a></li>
+                            <li><a href="{% url 'enviro:product' %}">Products</a></li>
+                            <li><a href="{% url 'enviro:media' %}" target="_self">Media</a></li>
+                            <li><a href="{% url 'enviro:contact' %}">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang">
+                    <img src="{% static 'img/icons/Globe.png' %}" alt="Globe"/>
+                    <div class="dropdown">
+                        <div class="drop_btn flex align_center justify_center">
+                            <button class="dropbtn_item" onclick="openDrop()">Ru</button>
+                            <img
+                                    src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
+                                    alt="Down"
+                                    onclick="openDrop()"
+                            />
+                        </div>
+                        <div class="dropdown-content none" id="dropdown-content">
+                            <a href="#">Uz</a>
+                            <a href="#">Eng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner flex justify_center">
+        <div class="container flex">
+            <div class="banner_items flex justify_between align_center">
+                <div class="bannerItems_anim" id="banner-animate">
+                    <div class="products_change flex justify_evenly align_center">
+                        <h1 class="prodtitle">
+                            Lorem <span class="ublue">Ipsum </span> is simply dummy text
+                            of the
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry. Lorem Ipsum
+                        </p>
+
+                        <div class="products_btn flex align_center justify_between">
+                            <button class="btn btn_products">
+                                <a href="{% url 'enviro:product' %}">Products</a>
+                            </button>
+                            <div class="slider_btn">
+                                <button class="btn left_arr">
+                                    <img src="{% static 'img/icons/allow_right.png' %}" alt="<"/>
+                                </button>
+                                <button class="btn right_arr" onclick="rightSlider()">
+                                    <img src="{% static 'img/icons/allow_right.png' %}" alt=">"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products_change flex justify_evenly align_center">
+                        <h1 class="prodtitle">
+                            Lorem <span class="ublue">Ipsum </span> is simply dummy text
+                            of the
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry. Lorem Ipsum
+                        </p>
+
+                        <div class="products_btn flex align_center justify_between">
+                            <button class="btn btn_products">
+                                <a href="{% url 'enviro:product' %}">Products</a>
+                            </button>
+                            <div class="slider_btn">
+                                <button class="btn left_arr" onclick="leftSlider()">
+                                    <img src="{% static 'img/icons/allow_right.png' %}" alt="<"/>
+                                </button>
+                                <button class="btn right_arr" onclick="rightSlider()">
+                                    <img src="{% static 'img/icons/allow_right.png' %}" alt=">"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{% static 'img/header_person.png' %}" alt="Person" class="bimgper"/>
+        </div>
+    </div>
+</header>
+
+<!-- Why Us -->
+<section>
+    <div class="why_us">
+        <h1 class="why_title"><span class="blue">Why</span> us?</h1>
+        <div class="why_us_contents flex justify_center align_center">
+            <div class="why_us_content1 flex justify_center align_center">
+                <div class="container justify_between">
+                    <div class="content long_content">
+                        <div class="con_img">
+                            <div class="con_img_bg flex justify_center align_center">
+                                <img src="{% static 'img/kukrak_nishoni.png' %}" alt="yorliq"/>
+                            </div>
+                        </div>
+                        <div class="con_titles flex justify_center">
+                            <h1>Lorem Ipsum is simply</h1>
+                            <p>
+                                Vision By inventing and importing best quality raw
+                                materials, to be one of the professional and experienced
+                                company which can help to improve the profit of its clients
+                                and responsibly the life of people all over the world.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content short_content">
+                        <div class="con_img">
+                            <div class="con_img_bg flex justify_center align_center">
+                                <img src="{% static 'img/zur.png' %}" alt="ok"/>
+                            </div>
+                        </div>
+                        <div class="con_titles">
+                            <h1>Lorem Ipsum is simply</h1>
+                            <p>
+                                Inventing, producing and importing the highest quality
+                                chemical raw materials with best price for its partners all
+                                over the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why_us_content2 flex justify_center align_center">
+                <div class="container justify_between">
+                    <div class="content short_content">
+                        <div class="con_img">
+                            <div class="con_img_bg flex justify_center align_center">
+                                <img src="{% static 'img/dollor.png' %}" alt="dollor"/>
+                            </div>
+                        </div>
+                        <div class="con_titles">
+                            <h1>Lorem Ipsum is simply</h1>
+                            <p>
+                                Inventing, producing and importing the highest quality
+                                chemical raw materials with best price for its partners all
+                                over the world.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content long_content">
+                        <div class="con_img">
+                            <div class="con_img_bg flex justify_center align_center">
+                                <img src="{% static 'img/lampa.png' %}" alt="lampa"/>
+                            </div>
+                        </div>
+                        <div class="con_titles">
+                            <h1>Lorem Ipsum is simply</h1>
+                            <p>
+                                Inventing, producing and importing the highest quality
+                                chemical raw materials with best price for its partners all
+                                over the world. Inventing, producing and importing the
+                                highest quality chemical raw materials with best price for
+                                its partners all over the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section>
+    <div class="products" id="products">
+        <h1 class="pro_title">Products</h1>
+        <div class="products_contents flex justify_center align_center">
+            <div class="container justify_between align_center">
+                <div class="pro_con">
+                    <img src="{% static 'img/himicials.png' %}" alt="Products"/>
+                    <h1>Qurilish ximikatlari</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.
+                    </p>
+                    <button class="btn_light">
+                        <a href="{% url 'enviro:building' %}">View more</a>
+                    </button>
+                </div>
+                <div class="pro_con">
+                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>
+                    <h1>Qurilish ximikatlari</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.
+                    </p>
+                    <button class="btn_light">
+                        <a href="{% url 'enviro:building' %}">View more</a>
+                    </button>
+                </div>
+                <div class="pro_con">
+                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>
+                    <h1>Qurilish ximikatlari</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.
+                    </p>
+                    <button class="btn_light">
+                        <a href="{% url 'enviro:building' %}">View more</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us -->
+<section>
+    <div class="about_us" id="about">
+        <div class="container">
+            <div class="about_contents">
+                <div class="about_content1">
+                    <img src="{% static 'img/about_man.png' %}" alt="about us"/>
+                </div>
+                <div class="about_content2">
+                    <h1>About us</h1>
+                    <p>
+                        We make the world better with chemistry! “Enviro chemicals” LLC
+                        has been working in the field of chemical raw materials industry
+                        when it was established. With its hard working team and perfect
+                        solutions on problems, the compnay has become one of the leading
+                        institution in the sector. The company are mainly specilized on
+                        raw materials for paints, construction chemicals, leather,
+                        plastics and textiles, which means there are rich product
+                        portfolio. With the purpose of customer satisfaction with its
+                        quality products and reasonable price policy, the team of
+                        “Enviro Chemicals” LLC stays on principle of “we make the world
+                        better with chemistry“.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Clients -->
+<section>
+    <div class="clients">
+        <div class="container">
+            <div class="all_csection">
+                <h1>Clients</h1>
+                <div
+                        class="clients_logos flex flex_column justify_center align_center"
+                >
+                    <div class="slider_btn">
+                        <button class="btn left_arr clients_btn_left">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt=""/>
+                        </button>
+                        <button class="btn right_arr clients_btn_right">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt=""/>
+                        </button>
+                    </div>
+                    <div class="client_logos_img">
+                        <img
+                                src="{% static 'img/logoIPsum.png' %}"
+                                alt="logoIPsum"
+                                class="block"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum1.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum2.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum3.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum4.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum5.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum6.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum7.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                        <img
+                                src="{% static 'img/logoIPsum8.png' %}"
+                                alt="logoIPsum"
+                                class="mnone"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Address -->
+<section>
+    <div class="address flex align_center justify_center" id="contact">
+        <div class="container" style="justify-content: flex-end">
+            <div class="address_map">
+                <img src="{% static 'img/mapImg.png' %}" alt="map" class="addmap"/>
+                <div class="location">
+                    <img src="{% static 'img/location.png' %}" alt="location"/>
+                    <img src="{% static 'img/logo.png' %}" alt="address"/>
+                </div>
+                <div class="address_contacts">
+                    <div class="contents_data">
+                        <div class="top_data">
+                            <img src="{% static 'img/icons/fi-rr-phone-call.png' %}" alt="phone"/>
+                            <p>Phone number</p>
+                        </div>
+                        <h1>+998 97 628 28 82</h1>
+                    </div>
+                    <div class="contents_data">
+                        <div class="top_data">
+                            <img src="{% static 'img/icons/mail.png' %}" alt="email"/>
+                            <p>E-mail</p>
+                        </div>
+                        <h1>The.faksa@gmail.com</h1>
+                    </div>
+                    <div class="contents_data">
+                        <div class="top_data">
+                            <img src="{% static 'img/icons/address.png' %}" alt="Adress"/>
+                            <p>Adress</p>
+                        </div>
+                        <h1>Farg’ona shaxar, Boychechak 4</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="form_cons">
+                <div class="form_section">
+                    <h1>Lorem ipsum</h1>
+                    <form class="form">
+                        <div class="name">
+                            <label>Name</label>
+                            <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Ismingizni kiriting!"
+                                    required
+                            />
+                        </div>
+                        <div class="number">
+                            <label>Phone number</label>
+                            <input
+                                    type="number"
+                                    id="number"
+                                    placeholder="Telefon raqamingizni kiriting"
+                                    required
+                            />
+                        </div>
+                        <div class="email">
+                            <label>Email</label>
+                            <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Email pochtani kiriting"
+                                    required
+                            />
+                        </div>
+                        <button class="btn send" id="send">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer flex justify_center align_center">
+        <h1>All rights reserved enviro chemicals</h1>
+        <div class="container justify_flexEnd">
+            <div class="socials flex align_center">
+                <h2>Biz ijtimoiy tarmoqlarda</h2>
+                <ul class="flex">
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"
+                        /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="order_now none" id="order-now">
+    <div class="overlay"></div>
+    <div class="order_section">
+        <h1>Order now</h1>
+        <button class="close" id="close">
+            <img src="{% static 'img/close.png' %}" alt="x"/>
+        </button>
+        <form class="form">
+            <div class="name">
+                <label>Name</label>
+                <input
+                        type="text"
+                        id="name"
+                        placeholder="Ismingizni kiriting!"
+                        required
+                />
+            </div>
+            <div class="number">
+                <label>Phone number</label>
+                <input
+                        type="number"
+                        id="number"
+                        placeholder="Telefon raqamingizni kiriting"
+                        required
+                />
+            </div>
+            <div class="email">
+                <label>Email</label>
+                <input
+                        type="email"
+                        id="email"
+                        placeholder="Email pochtani kiriting"
+                        required
+                />
+            </div>
+            <button class="btn send" id="send-next">Send</button>
+        </form>
+    </div>
+</div>
+
+<div class="successfully none" id="successfully">
+    <div class="overlay"></div>
+    <div class="order_section successfully_section">
+        <div class="successfull_img">
+            <img src="{% static 'img/headset.png' %}" alt="headset"/>
+        </div>
+        <h1>Successfully send</h1>
+        <p>Operators will contact you shortly!</p>
+        <button class="btn send" id="close-successfully">Okay.</button>
+    </div>
+</div>
+
+<script src="{% static 'js/nav.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
