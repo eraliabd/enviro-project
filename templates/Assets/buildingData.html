@@ -131,43 +131,42 @@
                     <div class="slider_container">
                         <div class="buldingItems_slide">
                             {% for build in buildings %}
-                            <div class="material">
-                                <div class="mimg">
-                                    <img src="/media/{{ build.image }}" alt="material"/>
+                                <div class="material">
+                                    <div class="mimg">
+                                        <img src="/media/{{ build.image }}" alt="material"/>
+                                    </div>
+                                    <h1>{{ build.title }}</h1>
+                                    <p>{{ build.text }}</p>
+                                    <a href="{% url 'enviro:building_data' pk=build.id %}"
+                                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
                                 </div>
-                                <h1>{{ build.title }}</h1>
-                                <p>{{ build.text }}</p>
-                                <a href="{% url 'enviro:building_data' pk=build.id %}"
-                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
-                                /></a>
-                            </div>
                             {% endfor %}
-{#                            <div class="material">#}
-{#                                <div class="mimg">#}
-{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-{#                                </div>#}
-{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
-{#                                <p>#}
-{#                                    Lorem Ipsum is simply dummy text of the printing and#}
-{#                                    typesetting industry#}
-{#                                </p>#}
-{#                                <a href="{% url 'enviro:building_data' %}" .#}
-{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-{#                                /></a>#}
-{#                            </div>#}
-{#                            <div class="material">#}
-{#                                <div class="mimg">#}
-{#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-{#                                </div>#}
-{#                                <h1>Pure cellulose pulp, long fibre</h1>#}
-{#                                <p>#}
-{#                                    Lorem Ipsum is simply dummy text of the printing and#}
-{#                                    typesetting industry#}
-{#                                </p>#}
-{#                                <a href="{% url 'enviro:building_data' %}"#}
-{#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-{#                                /></a>#}
-{#                            </div>#}
+                            {#                            <div class="material">#}
+                            {#                                <div class="mimg">#}
+                            {#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
+                            {#                                </div>#}
+                            {#                                <h1>Pure cellulose pulp, long fibre</h1>#}
+                            {#                                <p>#}
+                            {#                                    Lorem Ipsum is simply dummy text of the printing and#}
+                            {#                                    typesetting industry#}
+                            {#                                </p>#}
+                            {#                                <a href="{% url 'enviro:building_data' %}" .#}
+                            {#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
+                            {#                                /></a>#}
+                            {#                            </div>#}
+                            {#                            <div class="material">#}
+                            {#                                <div class="mimg">#}
+                            {#                                    <img src="{% static 'img/sement.png' %}" alt="material"/>#}
+                            {#                                </div>#}
+                            {#                                <h1>Pure cellulose pulp, long fibre</h1>#}
+                            {#                                <p>#}
+                            {#                                    Lorem Ipsum is simply dummy text of the printing and#}
+                            {#                                    typesetting industry#}
+                            {#                                </p>#}
+                            {#                                <a href="{% url 'enviro:building_data' %}"#}
+                            {#                                >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
+                            {#                                /></a>#}
+                            {#                            </div>#}
                         </div>
                     </div>
                 </div>

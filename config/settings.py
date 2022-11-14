@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'environs',
     'ckeditor',
     'ckeditor_uploader',
+    'modeltranslation',
 
     # custom-apps
     'enviro',
@@ -69,10 +70,16 @@ MIDDLEWARE = [
 #     os.path.join(PROJECT_PATH, 'locale/'),
 # )
 
-ugettext = lambda s: s
+from django.utils.translation import gettext_lazy as _
+
 LANGUAGES = (
-    ('en', ugettext('English')),
-    ('ru', ugettext('Russian')),
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    ('uz', _('Uzbek')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 ROOT_URLCONF = 'config.urls'
@@ -141,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
 

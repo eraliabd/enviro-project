@@ -4,7 +4,7 @@ from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
 
 def index(request):
     main = Main.objects.get()
-    categories = ProductCategory.objects.all()
+    categories = ProductCategory.objects.all()[3:]
     why_us = WhyUs.objects.all()
     why_content1 = why_us[:2]
     why_content2 = why_us[2:]
@@ -56,6 +56,9 @@ def building(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
     buildings1 = buildings[:len(buildings)//2]
     buildings2 = buildings[len(buildings)//2:]
+    # print("1: ", buildings)
+    # print("2: ", buildings1)
+    # print("3: ", buildings2)
     products = ProductCategory.objects.all()
 
     context = {
