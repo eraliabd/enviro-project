@@ -56,7 +56,7 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
-    product_category = models.ForeignKey(ProductCategory, null=True, on_delete=models.SET_NULL)
+    product_category = models.ForeignKey(ProductCategory, null=True, on_delete=models.SET_NULL, related_name='category')
     image = models.ImageField(upload_to='product_img')
     title = models.CharField(max_length=255)
     text = models.TextField()
@@ -67,4 +67,4 @@ class Product(models.Model):
     packing_specification = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.title} {self.product_category}"
+        return f"{self.id}: {self.title} {self.product_category}"

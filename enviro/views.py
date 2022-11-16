@@ -5,7 +5,7 @@ from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
 
 def index(request):
     main = Main.objects.get()
-    categories = ProductCategory.objects.all()[3:]
+    categories = ProductCategory.objects.all()
     why_us = WhyUs.objects.all()
     # print("w: ", why_us)
     # print("w: ", why_us[:2])
@@ -35,7 +35,7 @@ def index(request):
 
 
 def product(request):
-    products = ProductCategory.objects.all()[3:]
+    products = ProductCategory.objects.all()
 
     context = {
         'products': products,
@@ -63,7 +63,7 @@ def building(request, pk):
     # print("1: ", buildings)
     # print("2: ", buildings1)
     # print("3: ", buildings2)
-    products = ProductCategory.objects.all()[3:]
+    products = ProductCategory.objects.all()
 
     context = {
         'buildings1': buildings1,
@@ -74,12 +74,16 @@ def building(request, pk):
 
 
 def building_data(request, pk):
-    buildings = Product.objects.filter(product_category_id=pk)[:3]
+    buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
+    categories = ProductCategory.objects.filter()
+
+    # print(buildings)
 
     context = {
         'building_data': building_data,
         'buildings': buildings,
+        'categories': categories,
     }
     return render(request, 'Assets/buildingData.html', context)
 

@@ -11,6 +11,8 @@ class ProductCategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'text')
+    # slug field
+    # prepopulated_fields = {'slug': ('title',)}
 
 
 admin.site.register(ProductCategory, ProductCategoryAdmin)

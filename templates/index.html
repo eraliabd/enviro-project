@@ -159,7 +159,7 @@
                     <div class="content short_content">
                         <div class="con_img">
                             <div class="con_img_bg flex justify_center align_center">
-                                <img src="media/{{ why.image }}" alt="ok"/>
+                                <img src="/media/{{ why.image }}" alt="ok"/>
                             </div>
                         </div>
                         <div class="con_titles">
@@ -176,7 +176,7 @@
                     <div class="content short_content">
                         <div class="con_img">
                             <div class="con_img_bg flex justify_center align_center">
-                                <img src="media/{{ why.image }}" alt="dollor"/>
+                                <img src="/media/{{ why.image }}" alt="dollor"/>
                             </div>
                         </div>
                         <div class="con_titles">
@@ -216,7 +216,7 @@
             <div class="container justify_between align_center">
                 {% for category in categories %}
                 <div class="pro_con">
-                    <img src="media/{{ category.image }}" alt="Products"/>
+                    <img src="/media/{{ category.image }}" alt="Products"/>
                     <h1>{{ category.title }}</h1>
                     <p>{{ category.text }}</p>
                     <button class="btn_light">
@@ -287,7 +287,7 @@
                     </div>
                     <div class="client_logos_img">
                         {% for logo in logos %}
-                        <img src="media/{{ logo.logo_image }}" alt="logoIPsum" class="block"/>
+                        <img src="/media/{{ logo.logo_image }}" alt="logoIPsum" class="block"/>
                         {% endfor %}
 {#                        <img#}
 {#                                src="{% static 'img/logoIPsum1.png' %}"#}

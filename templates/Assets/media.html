@@ -54,7 +54,7 @@
                 <img src="{% static 'img/icons/Globe.png' %}" alt="Globe"/>
                 <div class="dropdown">
                     <div class="drop_btn flex align_center justify_center">
-                        <button class="dropbtn_item" onclick="openDrop()">Ru</button>
+                        <button class="dropbtn_item" onclick="openDrop()">Lang</button>
                         <img
                                 src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
                                 alt="Down"
@@ -62,8 +62,13 @@
                         />
                     </div>
                     <div class="dropdown-content none" id="dropdown-content">
-                        <a href="#">Uz</a>
-                        <a href="#">Eng</a>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+
+                        {% for lang in languages %}
+                            <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -81,53 +86,53 @@
             <div class="container flex_column">
                 <div class="first_row">
                     {% for m in first_media %}
-                    <div class="media_left mediaImg_item">
-                        <img src="/media/{{ m.image }}" alt="media"/>
-                        <div class="overlay_ImgText"></div>
+                        <div class="media_left mediaImg_item">
+                            <img src="/media/{{ m.image }}" alt="media"/>
+                            <div class="overlay_ImgText"></div>
 
-                        <div class="img_text">
-                            <h1 class="imgText_title">{{ m.title }}</h1>
-                            <p class="imgText_p">{{ m.text }}</p>
+                            <div class="img_text">
+                                <h1 class="imgText_title">{{ m.title }}</h1>
+                                <p class="imgText_p">{{ m.text }}</p>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
-{#                    <div class="media_right mediaImg_item">#}
-{#                        <img src="{% static 'img/media/sixth.png' %}" alt=""/>#}
-{#                        <div class="overlay_ImgText"></div>#}
-{##}
-{#                        <div class="img_text">#}
-{#                            <h1 class="imgText_title">Media</h1>#}
-{#                            <p class="imgText_p">#}
-{#                                Lorem Ipsum is simply dummy text of the printing and#}
-{#                                typesetting industry#}
-{#                            </p>#}
-{#                        </div>#}
-{#                    </div>#}
+                    {#                    <div class="media_right mediaImg_item">#}
+                    {#                        <img src="{% static 'img/media/sixth.png' %}" alt=""/>#}
+                    {#                        <div class="overlay_ImgText"></div>#}
+                    {##}
+                    {#                        <div class="img_text">#}
+                    {#                            <h1 class="imgText_title">Media</h1>#}
+                    {#                            <p class="imgText_p">#}
+                    {#                                Lorem Ipsum is simply dummy text of the printing and#}
+                    {#                                typesetting industry#}
+                    {#                            </p>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
                 </div>
                 <div class="second_row">
                     {% for m in second_media %}
-                    <div class="media_left mediaImg_item">
-                        <img src="/media/{{ m.image }}" alt=""/>
-                        <div class="overlay_ImgText"></div>
+                        <div class="media_left mediaImg_item">
+                            <img src="/media/{{ m.image }}" alt=""/>
+                            <div class="overlay_ImgText"></div>
 
-                        <div class="img_text">
-                            <h1 class="imgText_title">{{ m.title }}</h1>
-                            <p class="imgText_p">{{ m.text }}</p>
+                            <div class="img_text">
+                                <h1 class="imgText_title">{{ m.title }}</h1>
+                                <p class="imgText_p">{{ m.text }}</p>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
-{#                    <div class="media_right mediaImg_item">#}
-{#                        <img src="{% static 'img/media/first.png' %}" alt="media"/>#}
-{#                        <div class="overlay_ImgText"></div>#}
-{##}
-{#                        <div class="img_text">#}
-{#                            <h1 class="imgText_title">Media</h1>#}
-{#                            <p class="imgText_p">#}
-{#                                Lorem Ipsum is simply dummy text of the printing and#}
-{#                                typesetting industry#}
-{#                            </p>#}
-{#                        </div>#}
-{#                    </div>#}
+                    {#                    <div class="media_right mediaImg_item">#}
+                    {#                        <img src="{% static 'img/media/first.png' %}" alt="media"/>#}
+                    {#                        <div class="overlay_ImgText"></div>#}
+                    {##}
+                    {#                        <div class="img_text">#}
+                    {#                            <h1 class="imgText_title">Media</h1>#}
+                    {#                            <p class="imgText_p">#}
+                    {#                                Lorem Ipsum is simply dummy text of the printing and#}
+                    {#                                typesetting industry#}
+                    {#                            </p>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </div>

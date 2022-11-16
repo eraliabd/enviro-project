@@ -101,7 +101,7 @@ TEMPLATES = [
 ]
 
 # TEMPLATE_CONTEXT_PROCESSORS = (
-#     'django.core.context_processors.i18n',  # this one
+#     'django.core.context_processors.i18n',
 # )
 
 WSGI_APPLICATION = 'config.wsgi.application'
@@ -155,6 +155,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

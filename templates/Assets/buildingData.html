@@ -54,7 +54,7 @@
                 <img src="{% static 'img/icons/Globe.png' %}" alt="Globe"/>
                 <div class="dropdown">
                     <div class="drop_btn flex align_center justify_center">
-                        <button class="dropbtn_item" onclick="openDrop()">Ru</button>
+                        <button class="dropbtn_item" onclick="openDrop()">Lang</button>
                         <img
                                 src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
                                 alt="Down"
@@ -62,8 +62,13 @@
                         />
                     </div>
                     <div class="dropdown-content none" id="dropdown-content">
-                        <a href="#">Uz</a>
-                        <a href="#">Eng</a>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+
+                        {% for lang in languages %}
+                            <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -77,7 +82,7 @@
 >
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href=""><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+            <a href="{% url 'enviro:building_data' pk=building_data.id %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
         </button>
     </div>
     <div class="container align_center justify_center">
