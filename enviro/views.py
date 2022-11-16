@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.utils.translation import gettext as _
 from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
 
 
@@ -6,6 +7,8 @@ def index(request):
     main = Main.objects.get()
     categories = ProductCategory.objects.all()[3:]
     why_us = WhyUs.objects.all()
+    # print("w: ", why_us)
+    # print("w: ", why_us[:2])
     why_content1 = why_us[:2]
     why_content2 = why_us[2:]
     # print(why_content1)
@@ -26,12 +29,13 @@ def index(request):
         'why_content2': why_content2,
         'logos': logos,
         'categories': categories,
+        'why_us': why_us,
     }
     return render(request, 'index.html', context)
 
 
 def product(request):
-    products = ProductCategory.objects.all()
+    products = ProductCategory.objects.all()[3:]
 
     context = {
         'products': products,
@@ -59,7 +63,7 @@ def building(request, pk):
     # print("1: ", buildings)
     # print("2: ", buildings1)
     # print("3: ", buildings2)
-    products = ProductCategory.objects.all()
+    products = ProductCategory.objects.all()[3:]
 
     context = {
         'buildings1': buildings1,
@@ -70,7 +74,7 @@ def building(request, pk):
 
 
 def building_data(request, pk):
-    buildings = Product.objects.filter(product_category_id=pk)
+    buildings = Product.objects.filter(product_category_id=pk)[:3]
     building_data = get_object_or_404(Product, id=pk)
 
     context = {

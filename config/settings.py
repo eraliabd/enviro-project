@@ -100,9 +100,9 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.i18n',  # this one
-)
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     'django.core.context_processors.i18n',  # this one
+# )
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
@@ -161,7 +161,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = "os.path.join(BASE_DIR, 'static')"
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
