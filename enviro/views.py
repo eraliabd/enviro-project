@@ -1,5 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext as _
+from psycopg2 import DataError
+
 from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
 
 
@@ -9,8 +12,8 @@ def index(request):
     why_us = WhyUs.objects.all()
     # print("w: ", why_us)
     # print("w: ", why_us[:2])
-    why_content1 = why_us[:2]
-    why_content2 = why_us[2:]
+    why_content1 = why_us[:len(why_us) // 2]
+    why_content2 = why_us[len(why_us) // 2:]
     # print(why_content1)
     # print(why_content2)
     logos = Logo.objects.all()
@@ -45,8 +48,8 @@ def product(request):
 
 def media(request):
     medias = Media.objects.all()
-    first_media = medias[:2]
-    second_media = medias[2:]
+    first_media = medias[:len(medias) // 2]
+    second_media = medias[len(medias) // 2:]
 
     context = {
         'first_media': first_media,
@@ -58,8 +61,8 @@ def media(request):
 
 def building(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
-    buildings1 = buildings[:len(buildings)//2]
-    buildings2 = buildings[len(buildings)//2:]
+    buildings1 = buildings[:len(buildings) // 2]
+    buildings2 = buildings[len(buildings) // 2:]
     # print("1: ", buildings)
     # print("2: ", buildings1)
     # print("3: ", buildings2)
@@ -104,3 +107,39 @@ def contact(request):
     }
 
     return render(request, 'Assets/contacts.html', context)
+
+
+def order(request, pk):
+    buildings = Product.objects.filter(product_category_id=pk)
+    building_data = get_object_or_404(Product, id=pk)
+    categories = ProductCategory.objects.filter()
+
+    if request.method == 'POST':
+        model = Contact()
+        model.full_name = request.POST.get('name', '')
+        try:
+            model.phone_number = request.POST.get('phone_number', '')
+        except DataError as error:
+            print("Error:", error)
+        model.email = request.POST.get('email', '')
+
+        model.save()
+
+    # print(buildings)
+
+    context = {
+        'building_data': building_data,
+        'buildings': buildings,
+        'categories': categories,
+    }
+    return render(request, 'Assets/order.html', context)
+
+
+def success(request):
+    main = Main.objects.get()
+
+    context = {
+        'main': main
+    }
+
+    return render(request, 'Assets/success.html', context)

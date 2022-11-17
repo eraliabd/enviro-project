@@ -92,36 +92,44 @@
                         <img src="{% static 'img/icons/fi-rr-phone-call.png' %}" alt="phone"/>
                         <p>Phone number</p>
                     </div>
-                    <h1>{{ main.phone_number }}</h1>
+                    <h1>+998 97 628 28 82</h1>
                 </div>
                 <div class="contents_data flex justify_between align_center">
                     <div class="top_data">
                         <img src="{% static 'img/icons/mail.png' %}" alt="email"/>
                         <p>E-mail</p>
                     </div>
-                    <h1>{{ main.email }}</h1>
+                    <h1>The.faksa@gmail.com</h1>
                 </div>
                 <div class="contents_data flex justify_between align_center">
                     <div class="top_data">
                         <img src="{% static 'img/icons/address.png' %}" alt="Adress"/>
                         <p>Adress</p>
                     </div>
-                    <h1>{{ main.address }}</h1>
+                    <h1>Farg’ona shaxar, Boychechak 4</h1>
                 </div>
                 <div class="contents_links flex justify_between align_center">
-                    <h2>{% trans 'We are on social networks' %}</h2>
+                    <h2>Biz ijtimoiy tarmoqlarda</h2>
                     <ul class="flex justify_center align_center">
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                            <a href="#"
+                            ><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"
+                            /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                            <a href="#"
+                            ><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"
+                            /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                            <a href="#"
+                            ><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"
+                            /></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                            <a href="#"
+                            ><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"
+                            /></a>
                         </li>
                     </ul>
                 </div>
@@ -131,19 +139,35 @@
                     {% csrf_token %}
                     <div class="name">
                         <label>Name</label>
-                        <input type="text" id="name" name="name" placeholder="Ismingizni kiriting!" required/>
+                        <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Ismingizni kiriting!"
+                                required
+                        />
                     </div>
                     <div class="number">
                         <label>Phone number</label>
-                        <input type="number" id="number" name="phone_number" placeholder="Telefon raqamingizni kiriting" required/>
+                        <input
+                                type="number"
+                                id="number"
+                                name="phone_number"
+                                placeholder="Telefon raqamingizni kiriting"
+                                required
+                        />
                     </div>
                     <div class="email">
                         <label>Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email pochtangizni kiriting" required/>
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email pochtani kiriting"
+                                required
+                        />
                     </div>
-                    <a href="{% url 'enviro:success' %}">
-                        <button type="submit" class="btn send" id="send">{% trans 'Send' %}</button>
-                    </a>
+                    <button type="submit" class="btn send" id="send">{% trans 'Send' %}</button>
                 </form>
             </div>
         </div>
@@ -166,16 +190,24 @@
                 <h2>{% trans 'We are on social networks' %}</h2>
                 <ul class="flex">
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"
+                        /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"
+                        /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"
+                        /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                        <a href="#"
+                        ><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"
+                        /></a>
                     </li>
                 </ul>
             </div>
@@ -183,7 +215,7 @@
     </div>
 </footer>
 
-<div class="successfully none" id="successfully">
+<div class="successfully" id="successfully">
     <div class="overlay"></div>
     <div class="order_section successfully_section">
         <div class="successfull_img">

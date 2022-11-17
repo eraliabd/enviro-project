@@ -72,3 +72,12 @@ function rightSlider() {
 function leftSlider() {
   bannerAnimate.style.marginLeft = "0";
 }
+
+document
+    .getElementById("send-next")
+    .addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("all-confirm").classList.remove("is-visible");
+        document.getElementById("overlay").classList.remove("is-visible");
+        document.getElementById("scrollBlock").classList.remove("scrollNone");
+    });

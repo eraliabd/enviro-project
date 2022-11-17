@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <title>Chemical</title>
 </head>
 <body>
@@ -76,88 +76,83 @@
     </div>
 </nav>
 
-<!-- Address-->
-<section>
-    <div class="address flex flex_column align_center" id="contact">
-        <div class="container">
-            <h1 class="contact_title text_align mt_40">{{ main.contact_title }}</h1>
-        </div>
-        <div class="container justify_between">
-            <div class="address_contacts flex flex_column justify_between">
-                <div class="contents_p">
-                    <p>{{ main.contact_text }}</p>
+<!-- Building Datas-->
+<section class="building_datas flex justify_center flex_column align_center">
+    <div class="container back_btn_left">
+        <button class="btn_light bbtn back_btn">
+            <a href=""><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+        </button>
+    </div>
+    <div class="container align_center justify_center">
+        <div class="materials_datas">
+            <div class="material_data1 flex align_center justify_between">
+                <div class="img_datas">
+                    <img src="/media/{{ building_data.image }}" alt="material"/>
                 </div>
-                <div class="contents_data flex justify_between align_center">
-                    <div class="top_data">
-                        <img src="{% static 'img/icons/fi-rr-phone-call.png' %}" alt="phone"/>
-                        <p>Phone number</p>
+                <div class="characters flex flex_column justify_between">
+                    <h1>{{ building_data.title }}</h1>
+                    <p class="paragrapgh">{{ building_data.text }}</p>
+                    <div class="characs">
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Shape</p>
+                            <div class="hr_item"></div>
+                            <h3>{{ building_data.shape }}</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Weight</p>
+                            <div class="hr_item"></div>
+                            <h3>{{ building_data.weight }}</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Color</p>
+                            <div class="hr_item"></div>
+                            <h3>{{ building_data.color }}</h3>
+                        </div>
+                        <div class="characs_conten flex justify_between align_center">
+                            <p>Packing specifications</p>
+                            <div class="hr_item"></div>
+                            <h3>{{ building_data.packing_specification }}</h3>
+                        </div>
                     </div>
-                    <h1>{{ main.phone_number }}</h1>
-                </div>
-                <div class="contents_data flex justify_between align_center">
-                    <div class="top_data">
-                        <img src="{% static 'img/icons/mail.png' %}" alt="email"/>
-                        <p>E-mail</p>
-                    </div>
-                    <h1>{{ main.email }}</h1>
-                </div>
-                <div class="contents_data flex justify_between align_center">
-                    <div class="top_data">
-                        <img src="{% static 'img/icons/address.png' %}" alt="Adress"/>
-                        <p>Adress</p>
-                    </div>
-                    <h1>{{ main.address }}</h1>
-                </div>
-                <div class="contents_links flex justify_between align_center">
-                    <h2>{% trans 'We are on social networks' %}</h2>
-                    <ul class="flex justify_center align_center">
-                        <li>
-                            <a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
-                        </li>
-                    </ul>
+                    <button class="btn buildbtn" onclick="" id="send">Order now</button>
                 </div>
             </div>
-            <div class="form_cons">
-                <form method="post" class="form flex justify_between flex_column" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="name">
-                        <label>Name</label>
-                        <input type="text" id="name" name="name" placeholder="Ismingizni kiriting!" required/>
+            <div class="material_data2_all">
+                <div class="material_tit flex align_center justify_between">
+                    <h1>Similar products</h1>
+                </div>
+                <div class="material_data2 flex align_center justify_between">
+                    <div class="slider_btn">
+                        <button class="btn left_arr">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt="<"/>
+                        </button>
+                        <button class="btn right_arr">
+                            <img src="{% static 'img/icons/allow_right.png' %}" alt=">"/>
+                        </button>
                     </div>
-                    <div class="number">
-                        <label>Phone number</label>
-                        <input type="number" id="number" name="phone_number" placeholder="Telefon raqamingizni kiriting" required/>
+
+                    <div class="slider_container">
+                        <div class="buldingItems_slide">
+                            {% for build in buildings %}
+                                <div class="material">
+                                    <div class="mimg">
+                                        <img src="/media/{{ build.image }}" alt="material"/>
+                                    </div>
+                                    <h1>{{ build.title }}</h1>
+                                    <p>{{ build.text }}</p>
+                                    <a href="{% url 'enviro:building_data' pk=build.id %}"
+                                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    <div class="email">
-                        <label>Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email pochtangizni kiriting" required/>
-                    </div>
-                    <a href="{% url 'enviro:success' %}">
-                        <button type="submit" class="btn send" id="send">{% trans 'Send' %}</button>
-                    </a>
-                </form>
-            </div>
-        </div>
-        <div class="address_map">
-            <img src="{% static 'img/mapImg.png' %}" alt="map" class="addmap"/>
-            <div class="location">
-                <img src="{% static 'img/location.png' %}" alt="location"/>
-                <img src="{% static 'img/logo.png' %}" alt="address"/>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer-->
 <footer>
     <div class="footer flex justify_center align_center">
         <h1>All rights reserved enviro chemicals</h1>
@@ -182,6 +177,26 @@
         </div>
     </div>
 </footer>
+
+<div class="order_now" id="order-now">
+    <div class="overlay"></div>
+    <div class="order_section">
+        <h1>Order now</h1>
+        <a href="{% url 'enviro:index' %}"><button class="close" id="close">
+            <img src="{% static 'img/close.png' %}" alt="x"/>
+        </button></a>
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Ism</label>
+            <input type="text" name="name" placeholder="Ismingizni kiriting!" required />
+            <label>Telefon raqami </label>
+            <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required />
+            <label>Mail</label>
+            <input type="text" name="email" placeholder="Email pochtangizni kiriting!" required />
+            <a role="button" href="{% url 'enviro:success' %}"><button type="submit" class="btn send" id="send-next">{% trans 'Send' %}</button></a>
+        </form>
+    </div>
+</div>
 
 <div class="successfully none" id="successfully">
     <div class="overlay"></div>
