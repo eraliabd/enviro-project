@@ -8,21 +8,21 @@ class ProductCategoryTranslationOptions(TranslationOptions):
 
 
 @register(WhyUs)
-class NewsTranslationOptions(TranslationOptions):
+class WhyUsTranslationOptions(TranslationOptions):
     fields = ('title', 'text')
 
 
 @register(Media)
-class NewsTranslationOptions(TranslationOptions):
+class MediaTranslationOptions(TranslationOptions):
     fields = ('title', 'text')
 
-# @register(Main)
-# class NewsTranslationOptions(TranslationOptions):
-#     fields = ('title', 'text')
 
+@register(Main)
+class MainTranslationOptions(TranslationOptions):
+    fields = ('title', 'text', 'about_title', 'about_text', 'contact_title', 'contact_text')
 
 # @register(Product)
-# class NewsTranslationOptions(TranslationOptions):
+# class ProductTranslationOptions(TranslationOptions):
 #     fields = ('title', 'text')
 
 # translator.register(NewsTranslationOptions)

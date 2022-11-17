@@ -89,6 +89,7 @@ def building_data(request, pk):
 
 
 def contact(request):
+    main = Main.objects.get()
     if request.method == 'POST':
         model = Contact()
         model.full_name = request.POST.get('name', '')
@@ -97,4 +98,8 @@ def contact(request):
 
         model.save()
 
-    return render(request, 'Assets/contacts.html')
+    context = {
+        'main': main
+    }
+
+    return render(request, 'Assets/contacts.html', context)

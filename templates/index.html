@@ -57,8 +57,8 @@
                         <div class="drop_btn flex align_center justify_center">
                             <button class="dropbtn_item" onclick="openDrop()">Lang</button>
                             <img src="{% static 'img/icons/fi-rr-angle-small-down.png' %}"
-                                    alt="Down"
-                                    onclick="openDrop()"/>
+                                 alt="Down"
+                                 onclick="openDrop()"/>
                         </div>
                         <div class="dropdown-content none" id="dropdown-content">
                             {% get_current_language as LANGUAGE_CODE %}
@@ -66,8 +66,7 @@
                             {% get_language_info_list for LANGUAGES as languages %}
 
                             {% for lang in languages %}
-                            <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
-{#                            <a href="#">Eng</a>#}
+                                <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
                             {% endfor %}
                         </div>
                     </div>
@@ -83,14 +82,14 @@
                     <div class="products_change flex justify_evenly align_center">
                         <h1 class="prodtitle">{{ mains.title }}</h1>
                         <p>{{ mains.text }}</p>
-{#                        {% for i in why_us %}#}
-{#                        <h1 class="prodtitle">{{ i.title }}</h1>#}
-{#                        <p>{{ i.text }}</p>#}
-{#                        {% endfor %}#}
+                        {#                        {% for i in why_us %}#}
+                        {#                        <h1 class="prodtitle">{{ i.title }}</h1>#}
+                        {#                        <p>{{ i.text }}</p>#}
+                        {#                        {% endfor %}#}
 
                         <div class="products_btn flex align_center justify_between">
                             <button class="btn btn_products">
-                                <a href="{% url 'enviro:product' %}">Products</a>
+                                <a href="{% url 'enviro:product' %}">{% trans 'Products' %}</a>
                             </button>
                             <div class="slider_btn">
                                 <button class="btn left_arr">
@@ -105,10 +104,10 @@
                     <div class="products_change flex justify_evenly align_center">
                         <h1 class="prodtitle">{{ mains.title }}</h1>
                         <p>{{ mains.text }}</p>
-{#                        {% for i in why_us %}#}
-{#                        <h1 class="prodtitle">{{ i.title }}</h1>#}
-{#                        <p>{{ i.text }}</p>#}
-{#                        {% endfor %}#}
+                        {#                        {% for i in why_us %}#}
+                        {#                        <h1 class="prodtitle">{{ i.title }}</h1>#}
+                        {#                        <p>{{ i.text }}</p>#}
+                        {#                        {% endfor %}#}
 
                         <div class="products_btn flex align_center justify_between">
                             <button class="btn btn_products">
@@ -135,73 +134,73 @@
 {#<h1>{% trans "Salom do'stlar" %}</h1>#}
 <section>
     <div class="why_us">
-        <h1 class="why_title"><span class="blue">Why</span> us?</h1>
+        <h1 class="why_title"><span class="blue"></span>{% trans 'Why us' %}?</h1>
         <div class="why_us_contents flex justify_center align_center">
             <div class="why_us_content1 flex justify_center align_center">
                 <div class="container justify_between">
-{#                    <div class="content long_content">#}
-{#                        <div class="con_img">#}
-{#                            <div class="con_img_bg flex justify_center align_center">#}
-{#                                <img src="{% static 'img/kukrak_nishoni.png' %}" alt="yorliq"/>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="con_titles flex justify_center">#}
-{#                            <h1>Lorem Ipsum is simply</h1>#}
-{#                            <p>#}
-{#                                Vision By inventing and importing best quality raw#}
-{#                                materials, to be one of the professional and experienced#}
-{#                                company which can help to improve the profit of its clients#}
-{#                                and responsibly the life of people all over the world.#}
-{#                            </p>#}
-{#                        </div>#}
-{#                    </div>#}
+                    {#                    <div class="content long_content">#}
+                    {#                        <div class="con_img">#}
+                    {#                            <div class="con_img_bg flex justify_center align_center">#}
+                    {#                                <img src="{% static 'img/kukrak_nishoni.png' %}" alt="yorliq"/>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                        <div class="con_titles flex justify_center">#}
+                    {#                            <h1>Lorem Ipsum is simply</h1>#}
+                    {#                            <p>#}
+                    {#                                Vision By inventing and importing best quality raw#}
+                    {#                                materials, to be one of the professional and experienced#}
+                    {#                                company which can help to improve the profit of its clients#}
+                    {#                                and responsibly the life of people all over the world.#}
+                    {#                            </p>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
                     {% for why in why_content1 %}
-                    <div class="content short_content">
-                        <div class="con_img">
-                            <div class="con_img_bg flex justify_center align_center">
-                                <img src="/media/{{ why.image }}" alt="ok"/>
+                        <div class="content short_content">
+                            <div class="con_img">
+                                <div class="con_img_bg flex justify_center align_center">
+                                    <img src="/media/{{ why.image }}" alt="ok"/>
+                                </div>
+                            </div>
+                            <div class="con_titles">
+                                <h1>{{ why.title }}</h1>
+                                <p>{{ why.text }}</p>
                             </div>
                         </div>
-                        <div class="con_titles">
-                            <h1>{{ why.title }}</h1>
-                            <p>{{ why.text }}</p>
-                        </div>
-                    </div>
                     {% endfor %}
                 </div>
             </div>
             <div class="why_us_content2 flex justify_center align_center">
                 <div class="container justify_between">
                     {% for why in why_content2 %}
-                    <div class="content short_content">
-                        <div class="con_img">
-                            <div class="con_img_bg flex justify_center align_center">
-                                <img src="/media/{{ why.image }}" alt="dollor"/>
+                        <div class="content short_content">
+                            <div class="con_img">
+                                <div class="con_img_bg flex justify_center align_center">
+                                    <img src="/media/{{ why.image }}" alt="dollor"/>
+                                </div>
+                            </div>
+                            <div class="con_titles">
+                                <h1>{{ why.title }}</h1>
+                                <p>{{ why.text }}</p>
                             </div>
                         </div>
-                        <div class="con_titles">
-                            <h1>{{ why.title }}</h1>
-                            <p>{{ why.text }}</p>
-                        </div>
-                    </div>
                     {% endfor %}
-{#                    <div class="content long_content">#}
-{#                        <div class="con_img">#}
-{#                            <div class="con_img_bg flex justify_center align_center">#}
-{#                                <img src="{% static 'img/lampa.png' %}" alt="lampa"/>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="con_titles">#}
-{#                            <h1>Lorem Ipsum is simply</h1>#}
-{#                            <p>#}
-{#                                Inventing, producing and importing the highest quality#}
-{#                                chemical raw materials with best price for its partners all#}
-{#                                over the world. Inventing, producing and importing the#}
-{#                                highest quality chemical raw materials with best price for#}
-{#                                its partners all over the world.#}
-{#                            </p>#}
-{#                        </div>#}
-{#                    </div>#}
+                    {#                    <div class="content long_content">#}
+                    {#                        <div class="con_img">#}
+                    {#                            <div class="con_img_bg flex justify_center align_center">#}
+                    {#                                <img src="{% static 'img/lampa.png' %}" alt="lampa"/>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                        <div class="con_titles">#}
+                    {#                            <h1>Lorem Ipsum is simply</h1>#}
+                    {#                            <p>#}
+                    {#                                Inventing, producing and importing the highest quality#}
+                    {#                                chemical raw materials with best price for its partners all#}
+                    {#                                over the world. Inventing, producing and importing the#}
+                    {#                                highest quality chemical raw materials with best price for#}
+                    {#                                its partners all over the world.#}
+                    {#                            </p>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </div>
@@ -211,41 +210,41 @@
 <!-- Products -->
 <section>
     <div class="products" id="products">
-        <h1 class="pro_title">Products</h1>
+        <h1 class="pro_title">{% trans 'Products' %}</h1>
         <div class="products_contents flex justify_center align_center">
             <div class="container justify_between align_center">
                 {% for category in categories %}
-                <div class="pro_con">
-                    <img src="/media/{{ category.image }}" alt="Products"/>
-                    <h1>{{ category.title }}</h1>
-                    <p>{{ category.text }}</p>
-                    <button class="btn_light">
-                        <a href="{% url 'enviro:building' pk=category.id %}">View more</a>
-                    </button>
-                </div>
+                    <div class="pro_con">
+                        <img src="/media/{{ category.image }}" alt="Products"/>
+                        <h1>{{ category.title }}</h1>
+                        <p>{{ category.text }}</p>
+                        <button class="btn_light">
+                            <a href="{% url 'enviro:building' pk=category.id %}">View more</a>
+                        </button>
+                    </div>
                 {% endfor %}
-{#                <div class="pro_con">#}
-{#                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>#}
-{#                    <h1>Qurilish ximikatlari</h1>#}
-{#                    <p>#}
-{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-{#                        industry.#}
-{#                    </p>#}
-{#                    <button class="btn_light">#}
-{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
-{#                    </button>#}
-{#                </div>#}
-{#                <div class="pro_con">#}
-{#                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>#}
-{#                    <h1>Qurilish ximikatlari</h1>#}
-{#                    <p>#}
-{#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-{#                        industry.#}
-{#                    </p>#}
-{#                    <button class="btn_light">#}
-{#                        <a href="{% url 'enviro:building' %}">View more</a>#}
-{#                    </button>#}
-{#                </div>#}
+                {#                <div class="pro_con">#}
+                {#                    <img src="{% static 'img/Thimicals.png' %}" alt="Products"/>#}
+                {#                    <h1>Qurilish ximikatlari</h1>#}
+                {#                    <p>#}
+                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+                {#                        industry.#}
+                {#                    </p>#}
+                {#                    <button class="btn_light">#}
+                {#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+                {#                    </button>#}
+                {#                </div>#}
+                {#                <div class="pro_con">#}
+                {#                    <img src="{% static 'img/building.jpg' %}" alt="Products"/>#}
+                {#                    <h1>Qurilish ximikatlari</h1>#}
+                {#                    <p>#}
+                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
+                {#                        industry.#}
+                {#                    </p>#}
+                {#                    <button class="btn_light">#}
+                {#                        <a href="{% url 'enviro:building' %}">View more</a>#}
+                {#                    </button>#}
+                {#                </div>#}
             </div>
         </div>
     </div>
@@ -273,7 +272,7 @@
     <div class="clients">
         <div class="container">
             <div class="all_csection">
-                <h1>Clients</h1>
+                <h1>{% trans 'Clients' %}</h1>
                 <div
                         class="clients_logos flex flex_column justify_center align_center"
                 >
@@ -287,48 +286,48 @@
                     </div>
                     <div class="client_logos_img">
                         {% for logo in logos %}
-                        <img src="/media/{{ logo.logo_image }}" alt="logoIPsum" class="block"/>
+                            <img src="/media/{{ logo.logo_image }}" alt="logoIPsum" class="block"/>
                         {% endfor %}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum1.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum2.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum3.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum4.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum5.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum6.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum7.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
-{#                        <img#}
-{#                                src="{% static 'img/logoIPsum8.png' %}"#}
-{#                                alt="logoIPsum"#}
-{#                                class="mnone"#}
-{#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum1.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum2.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum3.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum4.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum5.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum6.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum7.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
+                        {#                        <img#}
+                        {#                                src="{% static 'img/logoIPsum8.png' %}"#}
+                        {#                                alt="logoIPsum"#}
+                        {#                                class="mnone"#}
+                        {#                        />#}
                     </div>
                 </div>
             </div>
