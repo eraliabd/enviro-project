@@ -69,6 +69,7 @@ def building(request, pk):
         'buildings1': buildings1,
         'buildings2': buildings2,
         'products': products,
+        'buildings': buildings,
     }
     return render(request, 'Assets/building.html', context)
 

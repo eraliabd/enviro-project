@@ -82,9 +82,7 @@
         <div class="container justify_between">
             <div class="material_navigation">
                 <button class="btn_light bbtn">
-                    <a href="{% url 'enviro:index' %}"
-                    ><img src="{% static 'img/back.png' %}" alt="<"/> Back</a
-                    >
+                    <a href="{% url 'enviro:index' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
                 </button>
                 <h1>{% trans 'Building materials' %}</h1>
                 <div class="nav_bars">
@@ -94,31 +92,6 @@
                                 <a href="{% url 'enviro:building' pk=product.id %}" class="">{{ product.title }}</a>
                             </li>
                         {% endfor %}
-                        {#                        <li>#}
-                        {#                            <a href="#" class="black"#}
-                        {#                            >Lorem Ipsum is simply dummy text#}
-                        {#                            </a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#" class="black"#}
-                        {#                            >Lorem Ipsum is simply dummy text#}
-                        {#                            </a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#" class="black"#}
-                        {#                            >Lorem Ipsum is simply dummy text#}
-                        {#                            </a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#" class="black"#}
-                        {#                            >Lorem Ipsum is simply dummy text#}
-                        {#                            </a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#" class="black"#}
-                        {#                            >Lorem Ipsum is simply dummy text#}
-                        {#                            </a>#}
-                        {#                        </li>#}
                     </ul>
                 </div>
             </div>
@@ -135,32 +108,6 @@
                         /></a>
                     </div>
                 {% endfor %}
-                {#                <div class="material">#}
-                {#                    <div class="mimg">#}
-                {#                        <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-                {#                    </div>#}
-                {#                    <h1>Pure cellulose pulp, long fibre</h1>#}
-                {#                    <p>#}
-                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-                {#                        industry#}
-                {#                    </p>#}
-                {#                    <a href="{% url 'enviro:building_data' %}"#}
-                {#                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-                {#                    /></a>#}
-                {#                </div>#}
-                {#                <div class="material">#}
-                {#                    <div class="mimg">#}
-                {#                        <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-                {#                    </div>#}
-                {#                    <h1>Pure cellulose pulp, long fibre</h1>#}
-                {#                    <p>#}
-                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-                {#                        industry#}
-                {#                    </p>#}
-                {#                    <a href="{% url 'enviro:building_data' %}"#}
-                {#                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-                {#                    /></a>#}
-                {#                </div>#}
             </div>
             <div class="material_section">
                 {% for building in buildings2 %}
@@ -175,32 +122,6 @@
                         /></a>
                     </div>
                 {% endfor %}
-                {#                <div class="material">#}
-                {#                    <div class="mimg">#}
-                {#                        <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-                {#                    </div>#}
-                {#                    <h1>Pure cellulose pulp, long fibre</h1>#}
-                {#                    <p>#}
-                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-                {#                        industry#}
-                {#                    </p>#}
-                {#                    <a href="{% url 'enviro:building_data' %}"#}
-                {#                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-                {#                    /></a>#}
-                {#                </div>#}
-                {#                <div class="material">#}
-                {#                    <div class="mimg">#}
-                {#                        <img src="{% static 'img/sement.png' %}" alt="material"/>#}
-                {#                    </div>#}
-                {#                    <h1>Pure cellulose pulp, long fibre</h1>#}
-                {#                    <p>#}
-                {#                        Lorem Ipsum is simply dummy text of the printing and typesetting#}
-                {#                        industry#}
-                {#                    </p>#}
-                {#                    <a href="{% url 'enviro:building_data' %}"#}
-                {#                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"#}
-                {#                    /></a>#}
-                {#                </div>#}
             </div>
         </div>
     </div>
