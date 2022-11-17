@@ -117,10 +117,7 @@ def order(request, pk):
     if request.method == 'POST':
         model = Contact()
         model.full_name = request.POST.get('name', '')
-        try:
-            model.phone_number = request.POST.get('phone_number', '')
-        except DataError as error:
-            print("Error:", error)
+        model.phone_number = request.POST.get('phone_number', '')
         model.email = request.POST.get('email', '')
 
         model.save()
