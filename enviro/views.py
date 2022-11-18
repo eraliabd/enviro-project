@@ -3,7 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext as _
 from psycopg2 import DataError
 
-from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
+from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order
+from .forms import ProductForm, OrderForm
 
 
 def index(request):
@@ -113,13 +114,15 @@ def order(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
     categories = ProductCategory.objects.filter()
+    product = ProductForm()
+    order_form = OrderForm()
 
     if request.method == 'POST':
         model = Contact()
         model.full_name = request.POST.get('name', '')
         model.phone_number = request.POST.get('phone_number', '')
         model.email = request.POST.get('email', '')
-
+        model.order_set = order_form.save(commit=False)
         model.save()
 
     # print(buildings)

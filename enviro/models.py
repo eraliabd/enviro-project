@@ -71,3 +71,12 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.title} {self.product_category}"
+
+
+class Order(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.contact.full_name}:  {self.product.title}"

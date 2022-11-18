@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.apps import apps
 
-from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media
+from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order
 
 # for model in apps.get_app_config('enviro').models.values():
 #     admin.site.register(model)
@@ -22,3 +22,4 @@ admin.site.register(Logo)
 admin.site.register(WhyUs)
 admin.site.register(Contact)
 admin.site.register(Media)
+admin.site.register(Order)
