@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext as _
-from psycopg2 import DataError
+from django.db.models import Max, Q
 
 from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order
 from .forms import ProductForm, OrderForm
@@ -113,7 +113,7 @@ def contact(request):
 def order(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
-    categories = ProductCategory.objects.filter()
+    categories = ProductCategory.objects.all()
     product = ProductForm()
     order_form = OrderForm()
 
@@ -122,8 +122,22 @@ def order(request, pk):
         model.full_name = request.POST.get('name', '')
         model.phone_number = request.POST.get('phone_number', '')
         model.email = request.POST.get('email', '')
-        model.order_set = order_form.save(commit=False)
+
         model.save()
+        contact = (
+            Contact.objects.values('id', 'full_name', 'phone_number', 'email').
+                annotate(count=Max('id')).order_by('-id')[:1]
+        )
+        print(contact)
+
+        order = Order(
+            product_id=pk,
+            contact_id=contact['id']
+        )
+
+        order.save()
+
+
 
     # print(buildings)
 

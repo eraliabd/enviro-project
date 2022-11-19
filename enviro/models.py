@@ -75,7 +75,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name='orders')
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
