@@ -123,23 +123,21 @@ def order(request, pk):
         model.phone_number = request.POST.get('phone_number', '')
         model.email = request.POST.get('email', '')
 
-        model.save()
-        contact = (
-            Contact.objects.values('id', 'full_name', 'phone_number', 'email').
-                annotate(count=Max('id')).order_by('-id')[:1]
-        )
-        print(contact)
+        # model.save()
+        # contact = (
+        #     Contact.objects.values('id', 'full_name', 'phone_number', 'email').
+        #         annotate(count=Max('id')).order_by('-id')[:1]
+        # )
+        # print(contact)
 
         order = Order(
             product_id=pk,
-            contact_id=contact['id']
+            full_name=model.full_name,
+            phone_number=model.phone_number,
+            email=model.email,
         )
 
         order.save()
-
-
-
-    # print(buildings)
 
     context = {
         'building_data': building_data,

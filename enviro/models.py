@@ -22,6 +22,9 @@ class Main(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural = 'Main'
+
 
 class Contact(models.Model):
     full_name = models.CharField(max_length=200)
@@ -36,17 +39,32 @@ class Contact(models.Model):
 class Logo(models.Model):
     logo_image = models.ImageField(upload_to='logo_img')
 
+    def __str__(self):
+        return self.logo_image
+
 
 class WhyUs(models.Model):
     image = models.ImageField(upload_to='why_us_img')
     title = models.CharField(max_length=255)
     text = models.TextField()
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Why Us'
+
 
 class Media(models.Model):
     image = models.ImageField(upload_to='media_img')
     title = models.CharField(max_length=255)
     text = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Media'
 
 
 class ProductCategory(models.Model):
@@ -56,6 +74,9 @@ class ProductCategory(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = 'Product Categories'
 
 
 class Product(models.Model):
@@ -70,13 +91,21 @@ class Product(models.Model):
     packing_specification = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.id}: {self.title} {self.product_category}"
+        return f"{self.title}"
 
 
 class Order(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name='orders')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='product')
+    full_name = models.CharField(max_length=200, null=True)
+    phone_number = models.CharField(max_length=20, null=True)
+    email = models.EmailField(max_length=70, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.contact.full_name}:  {self.product.title}"
+        return f"The product ordered by {self.full_name}"
+
+    class Meta:
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'
+
+
