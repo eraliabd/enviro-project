@@ -112,16 +112,20 @@
                     <h2>{% trans 'We are on social networks' %}</h2>
                     <ul class="flex justify_center align_center">
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                            <a href="{{ social_networks.facebook }}">
+                                <img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                            <a href="{{ social_networks.instagram }}">
+                                <img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                            <a href="{{ social_networks.first_telegram }}">
+                                <img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                            <a href="{{ social_networks.second_telegram }}">
+                                <img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
                         </li>
                     </ul>
                 </div>
@@ -135,7 +139,8 @@
                     </div>
                     <div class="number">
                         <label>Phone number</label>
-                        <input type="text" id="number" name="phone_number" placeholder="Telefon raqamingizni kiriting" required/>
+                        <input type="text" id="number" name="phone_number" placeholder="Telefon raqamingizni kiriting"
+                               required/>
                     </div>
                     <div class="email">
                         <label>Email</label>
@@ -166,16 +171,20 @@
                 <h2>{% trans 'We are on social networks' %}</h2>
                 <ul class="flex">
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                        <a href="{{ social_networks.facebook }}"><img src="{% static 'img/icons/facebook.png' %}"
+                                                                      alt="facebook"/></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                        <a href="{{ social_networks.instagram }}"><img src="{% static 'img/icons/instagramm.png' %}"
+                                                                       alt="instagramm"/></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                        <a href="{{ social_networks.first_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                            alt="telegram"/></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                        <a href="{{ social_networks.second_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                             alt="yanatelegram"/></a>
                     </li>
                 </ul>
             </div>

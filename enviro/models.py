@@ -91,7 +91,7 @@ class Product(models.Model):
     packing_specification = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.title}"
+        return f"ID: {self.id} Name: {self.title}"
 
 
 class Order(models.Model):
@@ -108,4 +108,15 @@ class Order(models.Model):
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'
 
+
+# Social Networks
+class SocialNetwork(models.Model):
+    facebook = models.CharField(max_length=255, null=True, blank=True)
+    instagram = models.CharField(max_length=255, null=True, blank=True)
+    first_telegram = models.CharField(max_length=255, null=True, blank=True)
+    second_telegram = models.CharField(max_length=255, null=True, blank=True)
+
+    # bu ikkisi qo'shimcha (mabodo kerak bo'lib qolsa
+    youtube = models.CharField(max_length=255, null=True, blank=True)
+    tiktok = models.CharField(max_length=255, null=True, blank=True)
 

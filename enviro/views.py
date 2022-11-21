@@ -3,13 +3,14 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext as _
 from django.db.models import Max, Q
 
-from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order
+from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order, SocialNetwork
 from .forms import ProductForm, OrderForm
 
 
 def index(request):
     main = Main.objects.get()
     categories = ProductCategory.objects.all()
+    social_networks = SocialNetwork.objects.get()
     why_us = WhyUs.objects.all()
     # print("w: ", why_us)
     # print("w: ", why_us[:2])
@@ -34,15 +35,18 @@ def index(request):
         'logos': logos,
         'categories': categories,
         'why_us': why_us,
+        'social_networks': social_networks,
     }
     return render(request, 'index.html', context)
 
 
 def product(request):
     products = ProductCategory.objects.all()
+    social_networks = SocialNetwork.objects.get()
 
     context = {
         'products': products,
+        'social_networks': social_networks,
     }
     return render(request, 'Assets/products.html', context)
 
@@ -51,10 +55,12 @@ def media(request):
     medias = Media.objects.all()
     first_media = medias[:len(medias) // 2]
     second_media = medias[len(medias) // 2:]
+    social_networks = SocialNetwork.objects.get()
 
     context = {
         'first_media': first_media,
         'second_media': second_media,
+        'social_networks': social_networks,
     }
 
     return render(request, 'Assets/media.html', context)
@@ -68,12 +74,14 @@ def building(request, pk):
     # print("2: ", buildings1)
     # print("3: ", buildings2)
     products = ProductCategory.objects.all()
+    social_networks = SocialNetwork.objects.get()
 
     context = {
         'buildings1': buildings1,
         'buildings2': buildings2,
         'products': products,
         'buildings': buildings,
+        'social_networks': social_networks,
     }
     return render(request, 'Assets/building.html', context)
 
@@ -82,6 +90,7 @@ def building_data(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
     categories = ProductCategory.objects.filter()
+    social_networks = SocialNetwork.objects.get()
 
     # print(buildings)
 
@@ -89,12 +98,14 @@ def building_data(request, pk):
         'building_data': building_data,
         'buildings': buildings,
         'categories': categories,
+        'social_networks': social_networks,
     }
     return render(request, 'Assets/buildingData.html', context)
 
 
 def contact(request):
     main = Main.objects.get()
+    social_networks = SocialNetwork.objects.get()
     if request.method == 'POST':
         model = Contact()
         model.full_name = request.POST.get('name', '')
@@ -104,13 +115,15 @@ def contact(request):
         model.save()
 
     context = {
-        'main': main
+        'main': main,
+        'social_networks': social_networks,
     }
 
     return render(request, 'Assets/contacts.html', context)
 
 
 def order(request, pk):
+    social_networks = SocialNetwork.objects.get()
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
     categories = ProductCategory.objects.all()
@@ -143,15 +156,18 @@ def order(request, pk):
         'building_data': building_data,
         'buildings': buildings,
         'categories': categories,
+        'social_networks': social_networks,
     }
     return render(request, 'Assets/order.html', context)
 
 
 def success(request):
     main = Main.objects.get()
+    social_networks = SocialNetwork.objects.get()
 
     context = {
-        'main': main
+        'main': main,
+        'social_networks': social_networks,
     }
 
     return render(request, 'Assets/success.html', context)

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.apps import apps
 
-from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order
+from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order, SocialNetwork
 
 
 # for model in apps.get_app_config('enviro').models.values():
@@ -30,9 +30,15 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ('created',)
 
 
+class SocialNetworkAdmin(admin.ModelAdmin):
+    list_display = ('facebook', 'instagram', 'first_telegram', 'second_telegram')
+    list_display_links = ('facebook', 'instagram')
+
+
 admin.site.register(ProductCategory, ProductCategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Order, OrderAdmin)
+admin.site.register(SocialNetwork, SocialNetworkAdmin)
 admin.site.register(Main)
 admin.site.register(Logo)
 admin.site.register(WhyUs)
