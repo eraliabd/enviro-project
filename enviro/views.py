@@ -73,13 +73,13 @@ def building(request, pk):
     # print("1: ", buildings)
     # print("2: ", buildings1)
     # print("3: ", buildings2)
-    products = ProductCategory.objects.all()
+    product_category = ProductCategory.objects.all()
     social_networks = SocialNetwork.objects.get()
 
     context = {
         'buildings1': buildings1,
         'buildings2': buildings2,
-        'products': products,
+        'product_category': product_category,
         'buildings': buildings,
         'social_networks': social_networks,
     }
