@@ -82,7 +82,7 @@
         <div class="container justify_between">
             <div class="material_navigation">
                 <button class="btn_light bbtn">
-                    <a href="{% url 'enviro:index' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+                    <a href="{% url 'enviro:product' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
                 </button>
                 <h1>{% trans 'Building materials' %}</h1>
                 <div class="nav_bars">
@@ -104,7 +104,7 @@
                         <h1>{{ building.title }}</h1>
                         <p>{{ building.text }}</p>
                         <a href="{% url 'enviro:building_data' pk=building.id %}"
-                        >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                        >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"
                         /></a>
                     </div>
                 {% endfor %}
@@ -118,7 +118,7 @@
                         <h1>{{ building.title }}</h1>
                         <p>{{ building.text }}</p>
                         <a href="{% url 'enviro:building_data' pk=building.id %}"
-                        >View more <img src="{% static 'img/bluearight.png' %}" alt=">"
+                        >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"
                         /></a>
                     </div>
                 {% endfor %}

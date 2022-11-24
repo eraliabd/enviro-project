@@ -21,8 +21,7 @@ class MediaTranslationOptions(TranslationOptions):
 class MainTranslationOptions(TranslationOptions):
     fields = ('title', 'text', 'about_title', 'about_text', 'contact_title', 'contact_text')
 
-# @register(Product)
-# class ProductTranslationOptions(TranslationOptions):
-#     fields = ('title', 'text')
 
-# translator.register(NewsTranslationOptions)
+@register(Product)
+class ProductTranslationOptions(TranslationOptions):
+    fields = ('title', 'text', 'shape', 'weight', 'color', 'packing_specification')

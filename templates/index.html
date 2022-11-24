@@ -186,7 +186,7 @@
                         <h1>{{ category.title }}</h1>
                         <p>{{ category.text }}</p>
                         <button class="btn_light">
-                            <a href="{% url 'enviro:building' pk=category.id %}">View more</a>
+                            <a href="{% url 'enviro:building' pk=category.id %}">{% trans 'View more' %}</a>
                         </button>
                     </div>
                 {% endfor %}

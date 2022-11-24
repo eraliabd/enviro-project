@@ -82,7 +82,7 @@
 >
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href="{% url 'enviro:index' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+            <a href="{% url 'enviro:product' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
         </button>
     </div>
     <div class="container align_center justify_center">
@@ -116,12 +116,12 @@
                             <h3>{{ building_data.packing_specification }}</h3>
                         </div>
                     </div>
-                    <a href="{% url 'enviro:order' pk=building_data.id %}"><button class="btn buildbtn" id="send">Order now</button></a>
+                    <a href="{% url 'enviro:order' pk=building_data.id %}"><button class="btn buildbtn" id="send">{% trans 'Order now' %}</button></a>
                 </div>
             </div>
             <div class="material_data2_all">
                 <div class="material_tit flex align_center justify_between">
-                    <h1>Similar products</h1>
+                    <h1>{% trans 'Similar products' %}</h1>
                 </div>
                 <div class="material_data2 flex align_center justify_between">
                     <div class="slider_btn">
@@ -143,7 +143,7 @@
                                     <h1>{{ build.title }}</h1>
                                     <p>{{ build.text }}</p>
                                     <a href="{% url 'enviro:building_data' pk=build.id %}"
-                                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
+                                    >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
                                 </div>
                             {% endfor %}
                         </div>

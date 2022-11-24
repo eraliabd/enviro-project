@@ -74,6 +74,7 @@ def building(request, pk):
     # print("2: ", buildings1)
     # print("3: ", buildings2)
     product_category = ProductCategory.objects.all()
+    # print(product_category)
     social_networks = SocialNetwork.objects.get()
 
     context = {
@@ -89,15 +90,13 @@ def building(request, pk):
 def building_data(request, pk):
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
-    categories = ProductCategory.objects.filter()
     social_networks = SocialNetwork.objects.get()
 
-    # print(buildings)
+    # print("buildings:", buildings)
 
     context = {
         'building_data': building_data,
         'buildings': buildings,
-        'categories': categories,
         'social_networks': social_networks,
     }
     return render(request, 'Assets/buildingData.html', context)

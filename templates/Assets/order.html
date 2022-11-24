@@ -187,11 +187,11 @@
         </button></a>
         <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
-            <label>Ism</label>
+            <label>Name</label>
             <input type="text" name="name" placeholder="Ismingizni kiriting!" required />
-            <label>Telefon raqami </label>
+            <label>Phone Number</label>
             <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required />
-            <label>Mail</label>
+            <label>Email</label>
             <input type="text" name="email" placeholder="Email pochtangizni kiriting!" required />
             <a role="button" href="{% url 'enviro:success' %}"><button type="submit" class="btn send" id="send-next">{% trans 'Send' %}</button></a>
         </form>

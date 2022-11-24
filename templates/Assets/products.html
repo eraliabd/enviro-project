@@ -90,7 +90,7 @@
                     <h1>{{ product.title }}</h1>
                     <p>{{ product.text }}</p>
                     <button class="btn_light">
-                        <a href="{% url 'enviro:building' pk=product.id %}">View more</a>
+                        <a href="{% url 'enviro:building' pk=product.id %}">{% trans 'View more' %}</a>
                     </button>
                 </div>
                 {% endfor %}
