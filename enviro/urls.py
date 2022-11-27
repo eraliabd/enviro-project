@@ -7,9 +7,9 @@ urlpatterns = [
     path('', index, name='index'),
     path('products/', product, name='product'),
     path('media/', media, name='media'),
-    path('products/building/<int:pk>/', building, name='building'),
-    path('building_data/<int:category_id>/<int:pk>/', building_data, name='building_data'),
+    path('products/category_id=<int:pk>/', building, name='building'),
+    path('product/category_id=<int:category_id>/<int:pk>/', building_data, name='building_data'),
     path('contact/', contact, name='contact'),
-    path('order/<int:pk>/', order, name='order'),
+    path('order/product_id=<int:pk>/name=<str:name>', order, name='order'),
     path('contact/success/', success, name='success'),
 ]

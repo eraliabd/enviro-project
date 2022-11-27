@@ -116,7 +116,7 @@
                             <h3>{{ building_data.packing_specification }}</h3>
                         </div>
                     </div>
-                    <a href="{% url 'enviro:order' pk=building_data.id %}"><button class="btn buildbtn" id="send">{% trans 'Order now' %}</button></a>
+                    <a href="{% url 'enviro:order' name=building_data.title pk=building_data.id %}"><button class="btn buildbtn" id="send">{% trans 'Order now' %}</button></a>
                 </div>
             </div>
             <div class="material_data2_all">

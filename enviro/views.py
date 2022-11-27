@@ -121,7 +121,7 @@ def contact(request):
     return render(request, 'Assets/contacts.html', context)
 
 
-def order(request, pk):
+def order(request, name, pk):
     social_networks = SocialNetwork.objects.get()
     buildings = Product.objects.filter(product_category_id=pk)
     building_data = get_object_or_404(Product, id=pk)
