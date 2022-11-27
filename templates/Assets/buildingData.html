@@ -82,7 +82,7 @@
 >
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href="{% url 'enviro:product' %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+            <a href="{% url 'enviro:building' pk=building_data.product_category_id %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
         </button>
     </div>
     <div class="container align_center justify_center">
@@ -142,7 +142,7 @@
                                     </div>
                                     <h1>{{ build.title }}</h1>
                                     <p>{{ build.text }}</p>
-                                    <a href="{% url 'enviro:building_data' pk=build.id %}"
+                                    <a href="{% url 'enviro:building_data' category_id=build.product_category_id pk=build.id %}"
                                     >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
                                 </div>
                             {% endfor %}

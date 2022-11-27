@@ -103,7 +103,7 @@
                         </div>
                         <h1>{{ building.title }}</h1>
                         <p>{{ building.text }}</p>
-                        <a href="{% url 'enviro:building_data' pk=building.id %}"
+                        <a href="{% url 'enviro:building_data' category_id=building.product_category_id pk=building.id %}"
                         >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"
                         /></a>
                     </div>
@@ -117,7 +117,7 @@
                         </div>
                         <h1>{{ building.title }}</h1>
                         <p>{{ building.text }}</p>
-                        <a href="{% url 'enviro:building_data' pk=building.id %}"
+                        <a href="{% url 'enviro:building_data' category_id=building.product_category_id pk=building.id %}"
                         >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"
                         /></a>
                     </div>

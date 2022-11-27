@@ -87,8 +87,8 @@ def building(request, pk):
     return render(request, 'Assets/building.html', context)
 
 
-def building_data(request, pk):
-    buildings = Product.objects.filter(product_category_id=pk)
+def building_data(request, category_id, pk):
+    buildings = Product.objects.filter(product_category_id=category_id)
     building_data = get_object_or_404(Product, id=pk)
     social_networks = SocialNetwork.objects.get()
 
