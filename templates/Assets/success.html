@@ -213,9 +213,11 @@
         <div class="successfull_img">
             <img src="{% static 'img/headset.png' %}" alt="headset"/>
         </div>
-        <h1>Successfully send</h1>
-        <p>Operators will contact you shortly!</p>
-        <button class="btn send" id="close-successfully">Okay.</button>
+        <h1>{% trans 'Successfully send' %}🙂</h1>
+        <p>{% trans 'Operators will contact you shortly' %}!</p>
+        <a href="{% url 'enviro:index' %}">
+            <button style="padding: 2px 10px;" class="btn send" id="close-successfully">{% trans 'Good' %}</button>
+        </a>
     </div>
 </div>
 

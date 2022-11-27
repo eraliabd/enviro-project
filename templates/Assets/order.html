@@ -161,16 +161,20 @@
                 <h2>{% trans 'We are on social networks' %}</h2>
                 <ul class="flex">
                     <li>
-                        <a href="{{ social_networks.facebook }}"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                        <a href="{{ social_networks.facebook }}"><img src="{% static 'img/icons/facebook.png' %}"
+                                                                      alt="facebook"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.instagram }}"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                        <a href="{{ social_networks.instagram }}"><img src="{% static 'img/icons/instagramm.png' %}"
+                                                                       alt="instagramm"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.first_telegram }}"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                        <a href="{{ social_networks.first_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                            alt="telegram"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.second_telegram }}"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                        <a href="{{ social_networks.second_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                             alt="yanatelegram"/></a>
                     </li>
                 </ul>
             </div>
@@ -182,18 +186,22 @@
     <div class="overlay"></div>
     <div class="order_section">
         <h1>{% trans 'Order now' %}</h1>
-        <a href="{% url 'enviro:index' %}"><button class="close" id="close">
-            <img src="{% static 'img/close.png' %}" alt="x"/>
-        </button></a>
+        <a href="{% url 'enviro:index' %}">
+            <button class="close" id="close">
+                <img src="{% static 'img/close.png' %}" alt="x"/>
+            </button>
+        </a>
         <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
             <label>Name</label>
-            <input type="text" name="name" placeholder="Ismingizni kiriting!" required />
+            <input type="text" name="name" placeholder="Ismingizni kiriting!" required/>
             <label>Phone Number</label>
-            <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required />
+            <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required/>
             <label>Email</label>
-            <input type="text" name="email" placeholder="Email pochtangizni kiriting!" required />
-            <a role="button" href="{% url 'enviro:success' %}"><button type="submit" class="btn send" id="send-next">{% trans 'Send' %}</button></a>
+            <input type="text" name="email" placeholder="Email pochtangizni kiriting!" required/>
+            <a href="">
+                <button type="submit" class="btn send" id="send-next">{% trans 'Send' %}</button>
+            </a>
         </form>
     </div>
 </div>

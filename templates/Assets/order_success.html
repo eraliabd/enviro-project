@@ -80,7 +80,7 @@
 <section class="building_datas flex justify_center flex_column align_center">
     <div class="container back_btn_left">
         <button class="btn_light bbtn back_btn">
-            <a href="{% url 'enviro:building' pk=building_data.product_category_id %}"><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
+            <a href=""><img src="{% static 'img/back.png' %}" alt="<"/> Back</a>
         </button>
     </div>
     <div class="container align_center justify_center">
@@ -114,12 +114,12 @@
                             <h3>{{ building_data.packing_specification }}</h3>
                         </div>
                     </div>
-                    <a href="{% url 'enviro:order' category_id=building_data.product_category_id name=building_data.title pk=building_data.id %}"><button class="btn buildbtn" id="send">{% trans 'Order now' %}</button></a>
+                    <button class="btn buildbtn" onclick="" id="send">Order now</button>
                 </div>
             </div>
             <div class="material_data2_all">
                 <div class="material_tit flex align_center justify_between">
-                    <h1>{% trans 'Similar products' %}</h1>
+                    <h1>Similar products</h1>
                 </div>
                 <div class="material_data2 flex align_center justify_between">
                     <div class="slider_btn">
@@ -141,7 +141,7 @@
                                     <h1>{{ build.title }}</h1>
                                     <p>{{ build.text }}</p>
                                     <a href="{% url 'enviro:building_data' category_id=build.product_category_id pk=build.id %}"
-                                    >{% trans 'View more' %}<img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
+                                    >View more <img src="{% static 'img/bluearight.png' %}" alt=">"/></a>
                                 </div>
                             {% endfor %}
                         </div>
@@ -161,16 +161,20 @@
                 <h2>{% trans 'We are on social networks' %}</h2>
                 <ul class="flex">
                     <li>
-                        <a href="{{ social_networks.facebook }}"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook"/></a>
+                        <a href="{{ social_networks.facebook }}"><img src="{% static 'img/icons/facebook.png' %}"
+                                                                      alt="facebook"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.instagram }}"><img src="{% static 'img/icons/instagramm.png' %}" alt="instagramm"/></a>
+                        <a href="{{ social_networks.instagram }}"><img src="{% static 'img/icons/instagramm.png' %}"
+                                                                       alt="instagramm"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.first_telegram }}"><img src="{% static 'img/icons/telegram.png' %}" alt="telegram"/></a>
+                        <a href="{{ social_networks.first_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                            alt="telegram"/></a>
                     </li>
                     <li>
-                        <a href="{{ social_networks.second_telegram }}"><img src="{% static 'img/icons/telegram.png' %}" alt="yanatelegram"/></a>
+                        <a href="{{ social_networks.second_telegram }}"><img src="{% static 'img/icons/telegram.png' %}"
+                                                                             alt="yanatelegram"/></a>
                     </li>
                 </ul>
             </div>
@@ -178,35 +182,17 @@
     </div>
 </footer>
 
-<div class="order_now none" id="order-now">
-    <div class="overlay"></div>
-    <div class="order_section">
-        <h1>Order now</h1>
-        <a href="{% url 'enviro:index' %}"><button class="close" id="close">
-            <img src="{% static 'img/close.png' %}" alt="x"/>
-        </button></a>
-        <form method="post" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label>Ism</label>
-            <input type="text" name="name" placeholder="Ismingizni kiriting!" required />
-            <label>Telefon raqami </label>
-            <input type="text" name="phone_number" placeholder="Telefon raqamingizni kiriting" required />
-            <label>Mail</label>
-            <input type="text" name="email" placeholder="Email pochtangizni kiriting!" required />
-            <a href="{% url 'enviro:index' %}"><button type="submit" class="btn send" id="send-next">{% trans 'Send' %}</button></a>
-        </form>
-    </div>
-</div>
-
-<div class="successfully none" id="successfully">
+<div class="successfully" id="successfully">
     <div class="overlay"></div>
     <div class="order_section successfully_section">
         <div class="successfull_img">
             <img src="{% static 'img/headset.png' %}" alt="headset"/>
         </div>
-        <h1>Successfully send</h1>
-        <p>Operators will contact you shortly!</p>
-        <button class="btn send" id="close-successfully">Okay.</button>
+        <h1>{% trans 'Successfully send' %}🙂</h1>
+        <p>{% trans 'Operators will contact you shortly' %}!</p>
+        <a href="{% url 'enviro:index' %}">
+            <button style="padding: 2px 10px;" class="btn send" id="close-successfully">{% trans 'Good' %}</button>
+        </a>
     </div>
 </div>
 

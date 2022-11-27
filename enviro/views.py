@@ -1,10 +1,6 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext as _
-from django.db.models import Max, Q
-
 from .models import Main, Product, ProductCategory, WhyUs, Contact, Logo, Media, Order, SocialNetwork
-from .forms import ProductForm, OrderForm
 
 
 def index(request):
@@ -112,6 +108,7 @@ def contact(request):
         model.email = request.POST.get('email', '')
 
         model.save()
+        return redirect('enviro:success')
 
     context = {
         'main': main,
@@ -121,26 +118,17 @@ def contact(request):
     return render(request, 'Assets/contacts.html', context)
 
 
-def order(request, name, pk):
+def order(request, category_id, name, pk):
     social_networks = SocialNetwork.objects.get()
-    buildings = Product.objects.filter(product_category_id=pk)
+    buildings = Product.objects.filter(product_category_id=category_id)
     building_data = get_object_or_404(Product, id=pk)
     categories = ProductCategory.objects.all()
-    product = ProductForm()
-    order_form = OrderForm()
 
     if request.method == 'POST':
         model = Contact()
         model.full_name = request.POST.get('name', '')
         model.phone_number = request.POST.get('phone_number', '')
         model.email = request.POST.get('email', '')
-
-        # model.save()
-        # contact = (
-        #     Contact.objects.values('id', 'full_name', 'phone_number', 'email').
-        #         annotate(count=Max('id')).order_by('-id')[:1]
-        # )
-        # print(contact)
 
         order = Order(
             product_id=pk,
@@ -150,6 +138,7 @@ def order(request, name, pk):
         )
 
         order.save()
+        return redirect('enviro:order_success')
 
     context = {
         'building_data': building_data,
@@ -163,6 +152,7 @@ def order(request, name, pk):
 def success(request):
     main = Main.objects.get()
     social_networks = SocialNetwork.objects.get()
+    print("main:", main)
 
     context = {
         'main': main,
@@ -170,3 +160,19 @@ def success(request):
     }
 
     return render(request, 'Assets/success.html', context)
+
+
+def order_success(request):
+    social_networks = SocialNetwork.objects.get()
+    buildings = Product.objects.all()[:2]
+    building_data = get_object_or_404(Product.objects.all()[:1])
+    categories = ProductCategory.objects.all()
+
+
+    context = {
+        'building_data': building_data,
+        'buildings': buildings,
+        'categories': categories,
+        'social_networks': social_networks,
+    }
+    return render(request, 'Assets/order_success.html', context)
