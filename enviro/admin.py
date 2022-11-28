@@ -31,7 +31,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'full_name', 'email', 'phone_number')
+    list_display = ('id', 'full_name', 'email', 'phone_number', 'created')
     list_display_links = ('id', 'full_name')
     search_fields = ('full_name', 'product')
     list_filter = ('created',)
