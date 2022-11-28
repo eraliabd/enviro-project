@@ -119,4 +119,3 @@ class SocialNetwork(models.Model):
     # bu ikkisi qo'shimcha (mabodo kerak bo'lib qolsa
     youtube = models.CharField(max_length=255, null=True, blank=True)
     tiktok = models.CharField(max_length=255, null=True, blank=True)
-

@@ -168,7 +168,6 @@ def order_success(request):
     building_data = get_object_or_404(Product.objects.all()[:1])
     categories = ProductCategory.objects.all()
 
-
     context = {
         'building_data': building_data,
         'buildings': buildings,
