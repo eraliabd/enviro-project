@@ -23,6 +23,13 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('weight',)
 
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('id', 'full_name', 'email', 'phone_number')
+    list_display_links = ('id', 'full_name')
+    search_fields = ('full_name',)
+    list_filter = ('created',)
+
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'email', 'phone_number')
     list_display_links = ('id', 'full_name')
@@ -39,8 +46,8 @@ admin.site.register(ProductCategory, ProductCategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(SocialNetwork, SocialNetworkAdmin)
+admin.site.register(Contact, ContactAdmin)
 admin.site.register(Main)
 admin.site.register(Logo)
 admin.site.register(WhyUs)
-admin.site.register(Contact)
 admin.site.register(Media)
