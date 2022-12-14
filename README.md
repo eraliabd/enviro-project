@@ -20,6 +20,8 @@ Ishlatilgan texnologiyalar:
 {% endfor %}
 
 {% trans 'Products' %} bunda Product matnini uchta tilga o'zgartirib beradi.
+![image](https://user-images.githubusercontent.com/91982815/207510254-fa18a873-509b-4e39-803a-afa753d13e13.png)
+
 
 English language
 ![image](https://user-images.githubusercontent.com/91982815/204130996-f7de47ac-0ee6-4f4c-b91d-21dafacdea79.png)
