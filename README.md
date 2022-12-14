@@ -8,10 +8,15 @@ Ishlatilgan texnologiyalar:
 "modeltranslation", "i18n_patterns", "gettext_lazy"
 
 {% get_current_language as LANGUAGE_CODE %}
+
 {% get_available_languages as LANGUAGES %}
+
 {% get_language_info_list for LANGUAGES as languages %}
+
 {% for lang in languages %}
+
 <a href="/{{ lang.code }}/">{{ lang.name_local }}</a>
+
 {% endfor %}
 
 {% trans 'Products' %} bunda Product matnini uchta tilga o'zgartirib beradi.
