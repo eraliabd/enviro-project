@@ -23,6 +23,9 @@ Ishlatilgan texnologiyalar:
 
 ![image](https://user-images.githubusercontent.com/91982815/207510254-fa18a873-509b-4e39-803a-afa753d13e13.png)
 
+![image](https://user-images.githubusercontent.com/91982815/207510462-a0e47168-0778-4eb4-bd3f-e2ab360405aa.png)
+
+
 
 English language
 ![image](https://user-images.githubusercontent.com/91982815/204130996-f7de47ac-0ee6-4f4c-b91d-21dafacdea79.png)
